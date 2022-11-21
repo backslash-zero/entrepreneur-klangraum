@@ -36,9 +36,10 @@ const ScreenFrame = ({ setVisible, children } : ScreenFrameProps) => {
 	)
 	
 	return (
-		<div ref={ContainerRef} className=" w-full h-screen snap-start bg-slate-800
+		<div ref={ContainerRef} className=" w-full h-screen snap-start bg-emerald-900
 											flex items-center justify-center
-											border-b-2 border-red-500"
+											border-b-2 border-white
+											font-sans text-5xl"
 		>
 			{ children }
 		</div>

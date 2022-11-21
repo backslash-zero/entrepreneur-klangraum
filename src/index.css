@@ -21,3 +21,108 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@layer base {
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 100;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Thin-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 100;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-ThinItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 200;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Ultralight-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 200;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-UltralightItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 300;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Light-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 300;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-LightItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Regular-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-RegularItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 500;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Medium-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 500;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-MediumItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 600;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-SemiBold-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 600;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-SemiBoldItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 700;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Bold-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 700;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-BoldItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 900;
+    font-style: normal;
+    src: url(./assets/fonts/Suisse/SuisseIntl-Black-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: SuisseIntl;
+    font-weight: 900;
+    font-style: italic;
+    src: url(./assets/fonts/Suisse/SuisseIntl-BlackItalic-WebS.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: NaNSuccessTitling;
+    font-weight: 400;
+    font-style: normal;
+    src: url(./assets/fonts/NanSuccessTitling/NaNSuccessTitlingTRIAL-Normal.woff2) format("woff2");
+  }
+}

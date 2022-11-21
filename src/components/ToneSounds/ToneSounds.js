@@ -13,9 +13,10 @@ function ToneSounds(
 ) {
 	// const sampler = useRef(null)
 	const synth  = useRef(null)
-
+	const player = useRef(null)
 	useEffect(() => {
-		synth.current	= new Tone.Synth().toDestination();
+		synth.current = new Tone.Synth().toDestination();
+		player.current = new Tone.Player(ExampleSample).toDestination()
 		// sampler.current	= new Tone.Sampler(
 		// {
 		// 	// LoadSamples here	
@@ -30,6 +31,11 @@ function ToneSounds(
     	// ).toDestination();
 	}, [])
 	
+	useEffect(() => {
+		if (!isPlaying)
+			return;
+		player.current.start();
+	}, [isPlaying])
 
 	useEffect(() => {
 		if (!isPlaying)
