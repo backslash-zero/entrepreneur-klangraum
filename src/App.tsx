@@ -9,6 +9,7 @@ function App() {
   // Weather the sound is playing or not.
   const [isPlaying, setIsPlaying] = useState(false)
 
+  // 
   const [isVisibleFirst, setIsVisibleFirst] = useState(false)
   const [isVisibleSecond, setIsVisibleSecond] = useState(false)
   const [isVisibleThird, setIsVisibleThird] = useState(false)
