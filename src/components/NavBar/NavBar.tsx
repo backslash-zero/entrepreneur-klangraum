@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FiInfo } from 'react-icons/fi'
+import { Link, useResolvedPath } from 'react-router-dom';
 
 interface NavBarProps {
 
@@ -8,7 +9,6 @@ interface NavBarProps {
 function NavBar() {
 
 	const [isCollapsed, setIsCollapsed] = useState(true)
-
 	return (
 
 			<nav className="sticky top-0 w-full h-14
@@ -20,9 +20,10 @@ function NavBar() {
 					Der entrepreneur
 				</p>
 				<div className='text-2xl '>
-					<button onClick={() => setIsCollapsed(true)}>
+				
+					<Link to="/infos" >
 						<FiInfo width={24} />
-					</button>
+					</Link>
 				</div>
 			</nav>
 		);

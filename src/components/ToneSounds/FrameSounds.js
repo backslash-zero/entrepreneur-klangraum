@@ -1,42 +1,21 @@
 import { useEffect, useRef } from "react";
 import * as Tone from 'tone';
-import ExampleSample from '../../assets/samples/example.mp3'
 
 
-function ToneSounds(
+function FrameSounds(
 	{
 		isVisibleFirst,
 		isVisibleSecond,
 		isVisibleThird,
-		isPlaying,
+		isPlaying
 	} 
 ) {
 	// const sampler = useRef(null)
 	const synth  = useRef(null)
-	const player = useRef(null)
 	useEffect(() => {
 		synth.current = new Tone.Synth().toDestination();
-		player.current = new Tone.Player(ExampleSample).toDestination()
-		// sampler.current	= new Tone.Sampler(
-		// {
-		// 	// LoadSamples here	
-		// 	ExampleSample, // A1
-		// },
-      	// {
-		// 	onload: () =>
-		// 	{
-		// 		//	setLoaded(true);
-		// 	}
-		// }
-    	// ).toDestination();
 	}, [])
 	
-	useEffect(() => {
-		if (!isPlaying)
-			return;
-		player.current.start();
-	}, [isPlaying])
-
 	useEffect(() => {
 		if (!isPlaying)
 			return;
@@ -56,9 +35,10 @@ function ToneSounds(
 	},[	isVisibleFirst,
 		isVisibleSecond,
 		isVisibleThird,
-		isPlaying,])
+		isPlaying,
+	])
 
 	return ( <></> );
 }
 
-export default ToneSounds;
+export default FrameSounds;
