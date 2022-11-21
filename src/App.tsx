@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as Tone from 'tone'
 import ScreenFrame from './components/ScreenFrame';
+import ToneSounds from './components/ToneSounds/ToneSounds';
 
 function App() {
 
@@ -14,13 +15,15 @@ function App() {
   const StartTone = async () => {
     await Tone.start()
     setIsPlaying(true)
-    console.log('audio is ready')
+    console.log('Browser ready to play audio')
   }
-
-
 
   return (
     <div>
+      <ToneSounds isPlaying={isPlaying}
+                  isVisibleFirst={isVisibleFirst}
+                  isVisibleSecond={isVisibleSecond}
+                  isVisibleThird={isVisibleThird}/>
       <div className='w-screen h-full snap-y snap-mandatory snap-always scroll-smooth bg-red-900 '  >
         <div className='sticky top-0 w-full z-50'>
           <p>isVisibleFirst: {isVisibleFirst ? "true": "false"}</p>
