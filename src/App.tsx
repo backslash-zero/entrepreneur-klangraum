@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className='bg-emerald-900'>
+    <div className='bg-forest-700'>
       <NavBar/>
       <MainSounds isPlaying={isPlaying} />
       <div className='w-full h-full'>

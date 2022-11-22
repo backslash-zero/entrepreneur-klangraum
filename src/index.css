@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 html,body {
+  background-color: #0F261E;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
@@ -125,4 +126,8 @@ code {
     font-style: normal;
     src: url(./assets/fonts/NanSuccessTitling/NaNSuccessTitlingTRIAL-Normal.woff2) format("woff2");
   }
+}
+
+p {
+  font-weight: 300;
 }

@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # fonts
-/src/assets/fonts
+# /src/assets/fonts
