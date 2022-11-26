@@ -7,7 +7,9 @@ html {
   /* scroll-behavior: smooth; */
   scroll-snap-type: y mandatory;
   scroll-snap-stop: always;
-  margin: 0
+  margin: 0;
+  height: 100%;
+  overflow: auto;
 }
 
 body {

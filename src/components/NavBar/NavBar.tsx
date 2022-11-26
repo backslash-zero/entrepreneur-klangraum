@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FiInfo, FiPauseCircle, FiPlayCircle, FiX } from 'react-icons/fi'
 import { Link, useMatch, useParams, useResolvedPath } from 'react-router-dom';
+import ScrollToTop from '../utils/ScrollToTop';
 
 interface NavBarProps {
 	isMuted : boolean,
@@ -15,7 +16,7 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 
 	return (
 
-			<nav className="sticky top-0 w-full h-20
+			<nav className="fixed top-0 w-full h-20
 								p-4
 								flex items-center justify-between
 								bg-transparent

@@ -13,8 +13,11 @@ function App() {
   const [isMuted, setIsMuted] = useState(false)
 
   const StartTone = async () => {
+    // Start sound experience
     await Tone.start()
     setIsPlaying(true)
+
+    // Scroll to first content
     console.log('Browser ready to play audio')
   }
 
@@ -22,12 +25,10 @@ function App() {
     <div className='bg-soil-400'>
       <MainSounds isPlaying={isPlaying} isMuted={isMuted} />
       <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} />
-      <div className='w-full h-full'>
-        <Routes >
-          <Route path='/' element={<Home StartTone={StartTone} isPlaying={isPlaying} />}/>
+        <Routes>
+          <Route path='/' element={<Home StartTone={StartTone} isPlaying={isPlaying} />} />
           <Route path='/infos' element={<Infos/>}/>
         </Routes>
-      </div>
     </div>
   );
 }

@@ -1,12 +1,14 @@
+
 import Person from "../components/Infos/Person";
 import ScrollToTop from "../components/utils/ScrollToTop";
 
 function Infos() {
-	return (
 
-		<div className="w-full h-full bg-soil-400 text-fluorange-500">
-			<ScrollToTop />
-			<div className="w-full h-full p-4 
+	return (
+		<>
+			<ScrollToTop/>
+			<div className="w-full bg-soil-400 text-fluorange-500">
+			<div className="w-full p-4 pt-24
 							text-white">
 				<h1 className="font-display text-4xl mb-4">decomposing trees</h1>
 				<p>
@@ -37,7 +39,8 @@ function Infos() {
 				</div>
 				<p>Rechtsgeschäftlich wird das Bayerische Staatsschauspiel vertreten durch den Staatsintendanten gemeinsam mit der Geschäftsführenden Direktorin, in Angelegenheiten der laufenden Verwaltung und in Vertretung des Staatsintendanten in nicht künstlerischen Angelegenheiten durch die Geschäftsführende Direktorin.</p>
 			</div>
-		</div>
+			</div>
+		</>
 	);
 }
 
