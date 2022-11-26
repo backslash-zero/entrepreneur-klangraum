@@ -12,10 +12,6 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
 
-  useEffect(() => {
-
-  })
-
   const StartTone = async () => {
     await Tone.start()
     setIsPlaying(true)

@@ -12,9 +12,6 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 
 	const resolvedPath = useResolvedPath("/infos")
 	const isInfosActive = useMatch({ path: resolvedPath.pathname, end: true })
-	
-	console.log(resolvedPath)
-	console.log(isInfosActive)
 
 	return (
 

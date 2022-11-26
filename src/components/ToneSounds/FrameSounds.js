@@ -4,9 +4,23 @@ import * as Tone from 'tone';
 
 function FrameSounds(
 	{
-		isVisibleFirst,
-		isVisibleSecond,
-		isVisibleThird,
+		isVisibleHero,
+		isVisibleIntro1,
+		isVisibleIntro2,
+		isVisibleIntro3,
+		// isVisibleProcess1,
+		// isVisibleProcess2,
+		// isVisibleProcess3,
+		// isVisibleProcess4,
+		// isVisibleProcess5,
+		// isVisibleProcess6,
+		// isVisibleProcess7,
+		// isVisibleProcess8,
+		// isVisibleProcess9,
+		// isVisibleProcess10,
+		// isVisibleClimate1,
+		// isVisibleClimate2,
+		// isVisibleClimate3,
 		isPlaying
 	} 
 ) {
@@ -20,22 +34,37 @@ function FrameSounds(
 		if (!isPlaying)
 			return;
 		const now = Tone.now()
-		if (isVisibleFirst)
+		if (isVisibleHero)
 		{
 			synth.current.triggerAttackRelease("C4", "8n", now + 0);
 		}
-		if (isVisibleSecond)
+		if (isVisibleIntro1)
 		{
-			synth.current.triggerAttackRelease("D4", "8n", now + 0);
+			synth.current.triggerAttackRelease("C4", "8n", now + 0);
 		}
-		if (isVisibleThird)
+		if (isVisibleIntro2)
 		{
-			synth.current.triggerAttackRelease("E4", "8n", now + 0);
+			synth.current.triggerAttackRelease("C4", "8n", now + 0);
 		}
-	},[	isVisibleFirst,
-		isVisibleSecond,
-		isVisibleThird,
-		isPlaying,
+	}, [
+		isVisibleHero,
+		isVisibleIntro1,
+		isVisibleIntro2,
+		isVisibleIntro3,
+		// isVisibleProcess1,
+		// isVisibleProcess2,
+		// isVisibleProcess3,
+		// isVisibleProcess4,
+		// isVisibleProcess5,
+		// isVisibleProcess6,
+		// isVisibleProcess7,
+		// isVisibleProcess8,
+		// isVisibleProcess9,
+		// isVisibleProcess10,
+		// isVisibleClimate1,
+		// isVisibleClimate2,
+		// isVisibleClimate3,
+		isPlaying
 	])
 
 	return ( <></> );

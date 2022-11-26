@@ -1,9 +1,11 @@
 import Person from "../components/Infos/Person";
+import ScrollToTop from "../components/utils/ScrollToTop";
 
 function Infos() {
 	return (
 
 		<div className="w-full h-full bg-soil-400 text-fluorange-500">
+			<ScrollToTop />
 			<div className="w-full h-full p-4 
 							text-white">
 				<h1 className="font-display text-4xl mb-4">decomposing trees</h1>
