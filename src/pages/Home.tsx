@@ -15,7 +15,7 @@ function Home({ StartTone, isPlaying } : HomeProps) {
 	return (
 	
 		<div className='w-screen h-full snap-y snap-mandatory snap-always scroll-smooth 
-						bg-forest-700 text-soil-200 '>
+						bg-soil-400 text-fluorange-500 '>
 			<FrameSounds
 							isPlaying={isPlaying}
 							isVisibleFirst={isVisibleFirst}
