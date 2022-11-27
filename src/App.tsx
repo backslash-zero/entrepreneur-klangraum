@@ -10,6 +10,7 @@ function App() {
 
   // Weather the sound is playing or not.
   const [isPlaying, setIsPlaying] = useState(false)
+  const [hasExperienceBegan, setHasExperienceBegan] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
 
   const StartTone = async () => {
@@ -26,7 +27,13 @@ function App() {
       <MainSounds isPlaying={isPlaying} isMuted={isMuted} />
       <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} />
         <Routes>
-          <Route path='/' element={<Home StartTone={StartTone} isPlaying={isPlaying} />} />
+        <Route
+          path='/'
+          element={<Home
+            StartTone={StartTone}
+            isPlaying={isPlaying}
+            hasExperienceBegan={hasExperienceBegan}
+            setHasExperienceBegan={setHasExperienceBegan}/>} />
           <Route path='/infos' element={<Infos/>}/>
         </Routes>
     </div>
