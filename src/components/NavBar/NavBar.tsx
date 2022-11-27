@@ -25,7 +25,7 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 								backdrop-blur
 								">								
 				<p className='font-display'>
-					Der entrepreneur
+					
 				</p>
 			<div className='text-[40px] flex items-center gap-2'>
 				{
