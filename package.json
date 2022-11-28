@@ -1,7 +1,7 @@
 {
   "name": "entrepreneur",
   "version": "0.1.0",
-  "homepage": "https://github.com/backslash-zero/entrepreneur-klangraum",
+  "homepage": "https://github.io/entrepreneur-klangraum",
   "private": false,
   "dependencies": {
     "@react-three/drei": "^9.45.0",
