@@ -98,7 +98,8 @@ function Timeline({
 			<div className="w-full h-full bg-forest-10 rounded-full 
 							flex items-center p-1
 							border border-1 border-fluorange-500">
-				<div className="w-full h-full bg-fluorange-500/25 rounded-full" style={{width : ProgressSizeString}}></div>
+					<div className="w-full h-full bg-fluorange-500/25 rounded-full
+									transition-all" style={{ width: ProgressSizeString }}></div>
 			</div>
 			<div className="w-56 h-full">
 

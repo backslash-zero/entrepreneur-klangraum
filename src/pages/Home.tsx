@@ -26,6 +26,7 @@ import Climate3 from "../components/Frames/Climate/Climate3";
 import ScreenFrame from "../components/Frames/ScreenFrame";
 import FrameSounds from "../components/ToneSounds/FrameSounds";
 import Timeline from "../components/NavBar/Timeline";
+import MainCanvas from "../components/3d/MainCanvas";
 
 interface HomeProps {
 	isPlaying : boolean,
@@ -81,7 +82,27 @@ function Home({
 	const [climateSlider, setClimateSlider] = useState(2)
 	
 	return (
-	<>
+		<>
+		<MainCanvas
+			isPlaying={isPlaying}
+			climateSlider={climateSlider}
+			isVisibleHero={isVisibleHero}
+			isVisibleIntro1={isVisibleIntro1}
+			isVisibleIntro2={isVisibleIntro2}
+			isVisibleIntro3={isVisibleIntro3}
+			isVisibleStages1={isVisibleStages1}
+			isVisibleStages2={isVisibleStages2}
+			isVisibleStages3={isVisibleStages3}
+			isVisibleStages4={isVisibleStages4}
+			isVisibleStages5={isVisibleStages5}
+			isVisibleStages6={isVisibleStages6}
+			isVisibleStages7={isVisibleStages7}
+			isVisibleStages8={isVisibleStages8}
+			isVisibleStages9={isVisibleStages9}
+			isVisibleStages10={isVisibleStages10}
+			isVisibleClimate1={isVisibleClimate1}
+			isVisibleClimate2={isVisibleClimate2}
+			isVisibleClimate3={isVisibleClimate3}/>
 		<Timeline
 			isVisibleStages1={isVisibleStages1}
 			isVisibleStages2={isVisibleStages2}

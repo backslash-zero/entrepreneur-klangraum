@@ -3,11 +3,12 @@ import { useGLTF } from '@react-three/drei'
 import { useRef } from "react";
 import { BoxGeometry, MeshStandardMaterial } from "three";
 import { GLTF } from "three-stdlib";
-
+import * as THREE from "three";
 
 interface LogModelProps {
 	props?: JSX.IntrinsicElements['group'],
 	material?: string
+	isPlaying: boolean
 }
 
 type GLTFResult = GLTF & {
@@ -25,6 +26,14 @@ function LogModel({ props }: LogModelProps) {
 
 	const ref = useRef<THREE.Mesh>(null!)
 	useFrame((state, delta) => (ref.current.rotation.y += 0.01))
+
+	const glassMaterial = new THREE.MeshPhysicalMaterial(
+		{
+			roughness: 0,  
+  			transmission: 1,  
+  			reflectivity: 0.5, // Add refraction!
+		}
+	)
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -34,7 +43,9 @@ function LogModel({ props }: LogModelProps) {
 				rotation={[0, 0 ,40]}
 				scale={0.01}
 				geometry={nodes.Cylinder__0.geometry}
-				material={materials["Scene_-_Root"]}
+				material={
+					materials["Scene_-_Root"]
+				}
 			/>
 			<mesh/>
 		</group>
