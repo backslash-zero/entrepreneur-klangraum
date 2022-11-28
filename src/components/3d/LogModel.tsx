@@ -8,7 +8,7 @@ import * as THREE from "three";
 interface LogModelProps {
 	props?: JSX.IntrinsicElements['group'],
 	material?: string
-	isPlaying: boolean
+	isMute: boolean
 }
 
 type GLTFResult = GLTF & {
@@ -20,12 +20,16 @@ type GLTFResult = GLTF & {
   };
 };
 
-function LogModel({ props }: LogModelProps) {
+function LogModel({ props, isMute }: LogModelProps) {
 	
 	const { nodes, materials } = useGLTF("/wooden_log.glb") as any
 
 	const ref = useRef<THREE.Mesh>(null!)
-	useFrame((state, delta) => (ref.current.rotation.y += 0.01))
+
+	useFrame((state, delta) => {
+		if (!isMute)
+			ref.current.rotation.y += 0.01
+	})
 
 	const glassMaterial = new THREE.MeshPhysicalMaterial(
 		{

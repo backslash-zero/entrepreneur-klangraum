@@ -29,7 +29,8 @@ import Timeline from "../components/NavBar/Timeline";
 import MainCanvas from "../components/3d/MainCanvas";
 
 interface HomeProps {
-	isPlaying : boolean,
+	isPlaying: boolean,
+	isMute: boolean
 	hasExperienceBegan : boolean,
 	setHasExperienceBegan : Dispatch<SetStateAction<boolean>>,
 	StartTone : () => {}
@@ -38,6 +39,7 @@ interface HomeProps {
 function Home({ 
 	StartTone, 
 	isPlaying, 
+	isMute, 
 	hasExperienceBegan, 
 	setHasExperienceBegan
 }: HomeProps) {
@@ -85,6 +87,7 @@ function Home({
 		<>
 		<MainCanvas
 			isPlaying={isPlaying}
+			isMute={isMute}
 			climateSlider={climateSlider}
 			isVisibleHero={isVisibleHero}
 			isVisibleIntro1={isVisibleIntro1}

@@ -11,11 +11,12 @@ function App() {
   // Weather the sound is playing or not.
   const [isPlaying, setIsPlaying] = useState(false)
   const [hasExperienceBegan, setHasExperienceBegan] = useState(false)
-  const [isMuted, setIsMuted] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
 
   const StartTone = async () => {
     // Start sound experience
     await Tone.start()
+    setIsMuted(false)
     setIsPlaying(true)
 
     // Scroll to first content
@@ -32,6 +33,7 @@ function App() {
           element={<Home
             StartTone={StartTone}
             isPlaying={isPlaying}
+            isMute={isMuted}
             hasExperienceBegan={hasExperienceBegan}
             setHasExperienceBegan={setHasExperienceBegan}/>} />
           <Route path='/infos' element={<Infos/>}/>

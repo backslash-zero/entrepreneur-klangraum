@@ -4,6 +4,7 @@ import LogModel from "./LogModel";
 
 interface MainCanvasProps {
 	isPlaying: boolean,
+	isMute: boolean,
 	climateSlider?: number,
 	isVisibleHero: boolean,
 	isVisibleIntro1: boolean,
@@ -26,6 +27,7 @@ interface MainCanvasProps {
 
 function MainCanvas({ 
 	isPlaying,
+	isMute,
 	climateSlider,
 	isVisibleHero,
 	isVisibleIntro1,
@@ -82,7 +84,7 @@ function MainCanvas({
 } >
 			<Canvas>
 				<ambientLight />
-				<LogModel isPlaying={isPlaying} />
+				<LogModel isMute={isMute} />
 			</Canvas>
 		</div>
 	 );
