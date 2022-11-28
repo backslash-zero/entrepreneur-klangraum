@@ -8,7 +8,7 @@ function MainCanvas() {
 		<div className="w-full h-full">
 			<Canvas>
 				<ambientLight />
-				<LogModel/>
+				<LogModel />
 			</Canvas>
 		</div>
 	 );
