@@ -38,6 +38,7 @@ const ScreenFrame = ({ setVisible, children } : ScreenFrameProps) => {
 	return (
 		<div ref={ContainerRef} className=" w-full h-screen snap-start bg-soil-400
 											p-4 pt-24
+											overflow-hidden
 											">
 			{ children }
 		</div>

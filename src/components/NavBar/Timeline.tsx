@@ -44,47 +44,36 @@ function Timeline({
 
 
 	const [ProgressSizeString, setProgressSizeString] = useState("0%")
-	const [ProgressSize, setProgressSize] = useState(0)
 
 	useEffect(() => {
 		if (isVisibleStages1) {
-			setProgressSize(0)
 			setProgressSizeString(0 + "%")
 		}
 		else if (isVisibleStages2) {
-			setProgressSize(5)
 			setProgressSizeString(5 + "%")
 		}
 		else if (isVisibleStages3) {
-			setProgressSize(10)
 			setProgressSizeString(10 + "%")
 		}
 		else if (isVisibleStages4) {
-			setProgressSize(10)
 			setProgressSizeString(10 + "%")
 		}
 		else if (isVisibleStages5) {
-			setProgressSize(12)
 			setProgressSizeString(12 + "%")
 		}
 		else if (isVisibleStages6) {
-			setProgressSize(23)
 			setProgressSizeString(23 + "%")
 		}
 		else if (isVisibleStages7) {
-			setProgressSize(34)
 			setProgressSizeString(34 + "%")
 		}
 		else if (isVisibleStages8) {
-			setProgressSize(50)
 			setProgressSizeString(50 + "%")
 		}
 		else if (isVisibleStages9) {
-			setProgressSize(66)
 			setProgressSizeString(66 + "%")
 		}
 		else if (isVisibleStages10) {
-			setProgressSize(100)
 			setProgressSizeString(100 + "%")
 		}
 
@@ -103,8 +92,9 @@ function Timeline({
 	
 	return ( 
 		checkIsVisible() ?
-		<div className="fixed w-full h-6 top-7 left-5 
-						flex">
+			<div className="fixed w-full h-6 top-7 left-5 
+							z-30
+							flex">
 			<div className="w-full h-full bg-forest-10 rounded-full 
 							flex items-center p-1
 							border border-1 border-fluorange-500">

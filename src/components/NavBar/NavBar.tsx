@@ -16,7 +16,7 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 	
 	return (
 		
-		<nav className="fixed top-0 w-full h-20
+		<nav className="fixed top-0 w-full h-20 z-20
 		p-4
 		flex items-center justify-between
 		bg-transparent

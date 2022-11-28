@@ -12,6 +12,6 @@ function MainCanvas() {
 			</Canvas>
 		</div>
 	 );
-}
+}	
 
 export default MainCanvas;
