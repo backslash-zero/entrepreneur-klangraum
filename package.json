@@ -1,8 +1,8 @@
 {
   "name": "entrepreneur",
   "version": "0.1.0",
-  "homepage": ".",
-  "private": true,
+  "homepage": "https://github.com/backslash-zero/entrepreneur-klangraum",
+  "private": false,
   "dependencies": {
     "@react-three/fiber": "^8.9.1",
     "@testing-library/jest-dom": "^5.14.1",
