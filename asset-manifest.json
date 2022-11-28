@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/entrepreneur-klangraum/static/css/main.861af641.css",
-    "main.js": "/entrepreneur-klangraum/static/js/main.d27fb937.js",
+    "main.css": "/entrepreneur-klangraum/static/css/main.79efc0e7.css",
+    "main.js": "/entrepreneur-klangraum/static/js/main.24772269.js",
     "static/js/787.239a4e72.chunk.js": "/entrepreneur-klangraum/static/js/787.239a4e72.chunk.js",
     "static/media/example.mp3": "/entrepreneur-klangraum/static/media/example.7a2fc3895bd9af1a7ff1.mp3",
     "static/media/NaNSuccessTitlingTRIAL-Normal.woff2": "/entrepreneur-klangraum/static/media/NaNSuccessTitlingTRIAL-Normal.79810c7bcfecafa6f103.woff2",
@@ -22,12 +22,12 @@
     "static/media/SuisseIntl-Ultralight-WebS.woff2": "/entrepreneur-klangraum/static/media/SuisseIntl-Ultralight-WebS.76fc4bb161fef1e476eb.woff2",
     "static/media/SuisseIntl-Regular-WebS.woff2": "/entrepreneur-klangraum/static/media/SuisseIntl-Regular-WebS.7328f724fa58bdc7a3a7.woff2",
     "index.html": "/entrepreneur-klangraum/index.html",
-    "main.861af641.css.map": "/entrepreneur-klangraum/static/css/main.861af641.css.map",
-    "main.d27fb937.js.map": "/entrepreneur-klangraum/static/js/main.d27fb937.js.map",
+    "main.79efc0e7.css.map": "/entrepreneur-klangraum/static/css/main.79efc0e7.css.map",
+    "main.24772269.js.map": "/entrepreneur-klangraum/static/js/main.24772269.js.map",
     "787.239a4e72.chunk.js.map": "/entrepreneur-klangraum/static/js/787.239a4e72.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.861af641.css",
-    "static/js/main.d27fb937.js"
+    "static/css/main.79efc0e7.css",
+    "static/js/main.24772269.js"
   ]
 }
