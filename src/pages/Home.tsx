@@ -25,6 +25,7 @@ import Climate3 from "../components/Frames/Climate/Climate3";
 
 import ScreenFrame from "../components/Frames/ScreenFrame";
 import FrameSounds from "../components/ToneSounds/FrameSounds";
+import Timeline from "../components/NavBar/Timeline";
 
 interface HomeProps {
 	isPlaying : boolean,
@@ -33,7 +34,12 @@ interface HomeProps {
 	StartTone : () => {}
 }
 
-function Home({ StartTone, isPlaying, hasExperienceBegan, setHasExperienceBegan }: HomeProps) {
+function Home({ 
+	StartTone, 
+	isPlaying, 
+	hasExperienceBegan, 
+	setHasExperienceBegan
+}: HomeProps) {
 	
 	const experienceBegin = useRef<null | HTMLDivElement>(null)
 	
@@ -72,9 +78,22 @@ function Home({ StartTone, isPlaying, hasExperienceBegan, setHasExperienceBegan 
 	const [isVisibleClimate2, setIsVisibleClimate2] = useState(false)
 	const [isVisibleClimate3, setIsVisibleClimate3] = useState(false)
 	
-
+	const [climateSlider, setClimateSlider] = useState(2)
 	
 	return (
+	<>
+		<Timeline
+			isVisibleStages1={isVisibleStages1}
+			isVisibleStages2={isVisibleStages2}
+			isVisibleStages3={isVisibleStages3}
+			isVisibleStages4={isVisibleStages4}
+			isVisibleStages5={isVisibleStages5}
+			isVisibleStages6={isVisibleStages6}
+			isVisibleStages7={isVisibleStages7}
+			isVisibleStages8={isVisibleStages8}
+			isVisibleStages9={isVisibleStages9}
+			isVisibleStages10={isVisibleStages10}
+		/>
 	
 		<div className='w-screen h-full snap-y snap-mandatory snap-always scroll-smooth 
 						bg-soil-400 text-fluorange-500 '>
@@ -100,6 +119,8 @@ function Home({ StartTone, isPlaying, hasExperienceBegan, setHasExperienceBegan 
 							isVisibleClimate1={isVisibleClimate1}
 							isVisibleClimate2={isVisibleClimate2}
 							isVisibleClimate3={isVisibleClimate3}
+
+							climateSlider={climateSlider}
 			
 			/>	
 			<ScreenFrame setVisible={setIsVisibleHero}>
@@ -157,11 +178,12 @@ function Home({ StartTone, isPlaying, hasExperienceBegan, setHasExperienceBegan 
 						<Climate2/>
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleClimate3}>
-						<Climate3/>
+						<Climate3 setClimateSlider={setClimateSlider}/>
 					</ScreenFrame>	
 				</div>
 			}
-    </div>);
+			</div>
+		</>	);
 }
 
 export default Home;

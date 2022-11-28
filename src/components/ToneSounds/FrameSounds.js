@@ -21,6 +21,7 @@ function FrameSounds(
 		isVisibleClimate1,
 		isVisibleClimate2,
 		isVisibleClimate3,
+		climateSlider,
 		isPlaying
 	} 
 ) {
@@ -64,6 +65,7 @@ function FrameSounds(
 		isVisibleClimate1,
 		isVisibleClimate2,
 		isVisibleClimate3,
+		climateSlider,
 		isPlaying
 	])
 
