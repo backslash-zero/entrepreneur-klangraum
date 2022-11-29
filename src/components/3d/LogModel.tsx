@@ -1,13 +1,13 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF } from '@react-three/drei'
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { BoxGeometry, InstancedMesh, MeshStandardMaterial, TextureLoader } from "three";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
 
 interface LogModelProps {
 	props?: JSX.IntrinsicElements['group'],
-	material?: string
+	material: string
 	isMute: boolean
 }
 
@@ -20,8 +20,10 @@ type GLTFResult = GLTF & {
   };
 };
 
-function LogModel({ props, isMute }: LogModelProps) {
+function LogModel({ props, isMute, material }: LogModelProps) {
 	
+	
+
 	const { nodes, materials } = useGLTF("/wooden_log.glb") as any
 
 	const ref = useRef<THREE.Mesh>(null!)
@@ -34,15 +36,21 @@ function LogModel({ props, isMute }: LogModelProps) {
 	console.log()
 
 	const colorMapEntrepreneur = useLoader(TextureLoader, 'log_entrepreneur.png')
+	const colorMapDefault = useLoader(TextureLoader, 'log.png')
 
-	const EntrepreneurMaterial = new THREE.MeshStandardMaterial(
-		{
-			...materials["Scene_-_Root"]
-		}
-	)
+	const EntrepreneurMaterial = new THREE.MeshStandardMaterial()
+	// EntrepreneurMaterial.map = materials["Scene_-_Root"].map.clone()
 	
-	if (EntrepreneurMaterial && EntrepreneurMaterial.map)
+	EntrepreneurMaterial.copy(materials["Scene_-_Root"])
+	if (EntrepreneurMaterial
+		&& EntrepreneurMaterial.map
+	)
+	{
 		EntrepreneurMaterial.map.image = colorMapEntrepreneur.image
+		materials["Scene_-_Root"].image = colorMapDefault.image
+
+	}
+	
 
 	return (
 		<group {...props} dispose={null}>
@@ -54,7 +62,16 @@ function LogModel({ props, isMute }: LogModelProps) {
 				scale={0.01}
 				geometry={nodes.Cylinder__0.geometry}
 				material={
+					// materials["Scene_-_Root"]
 					EntrepreneurMaterial
+
+					// material === 'wood' ?
+					// 	materials["Scene_-_Root"]
+					// 	:
+					// 	material === 'entrepreneur' ?
+							// EntrepreneurMaterial
+					// 		:
+					// 	glassMaterial	
 				}
 			/>
 			<mesh />

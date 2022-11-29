@@ -49,11 +49,28 @@ function MainCanvas({
 }: MainCanvasProps) {
 
 	const [size, setSize] = useState("100%")
-
+	const [isVisible, setVisible ] = useState(false)
+	const [materialType, setMaterialType ] = useState("wood")
 	// Rotate when isPlaying
 
 	// Scale to bottom corner in State phase
 	useEffect(() => {
+		if (isVisibleHero)
+			setVisible(false)
+		else 
+			setVisible(true)
+		
+		if (isVisibleIntro3)
+			setMaterialType("entrepreneur")
+		else if (
+			isVisibleClimate1 ||
+			isVisibleClimate2 ||
+			isVisibleClimate3
+		)
+			setMaterialType("glass")
+		else 
+			setMaterialType("wood")
+		
 		if (
 			isVisibleHero ||
 			isVisibleIntro1 ||
@@ -63,9 +80,13 @@ function MainCanvas({
 			isVisibleClimate2 ||
 			isVisibleClimate3
 		)
+		{
+			
 			setSize("100%")
+		}
 		else
 			setSize("25%")
+		
 	},[	isVisibleHero,
 		isVisibleIntro1,
 		isVisibleIntro2,
@@ -84,7 +105,10 @@ function MainCanvas({
 } >
 			<Canvas>
 				<ambientLight />
-				<LogModel isMute={isMute} />
+				{
+					isVisible &&
+					<LogModel isMute={isMute} material="entrepreneur" />
+				}
 			</Canvas>
 		</div>
 	 );
