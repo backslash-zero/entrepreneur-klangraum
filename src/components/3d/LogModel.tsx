@@ -1,7 +1,7 @@
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF } from '@react-three/drei'
 import { useRef } from "react";
-import { BoxGeometry, MeshStandardMaterial } from "three";
+import { BoxGeometry, InstancedMesh, MeshStandardMaterial, TextureLoader } from "three";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
 
@@ -31,13 +31,19 @@ function LogModel({ props, isMute }: LogModelProps) {
 			ref.current.rotation.y += 0.01
 	})
 
-	const glassMaterial = new THREE.MeshPhysicalMaterial(
+	console.log()
+
+	const colorMapEntrepreneur = useLoader(TextureLoader, 'log_entrepreneur.png')
+
+	const EntrepreneurMaterial = new THREE.MeshStandardMaterial(
 		{
-			roughness: 0,  
-  			transmission: 1,  
-  			reflectivity: 0.5, // Add refraction!
+			...materials["Scene_-_Root"]
 		}
 	)
+	
+	if (EntrepreneurMaterial && EntrepreneurMaterial.map)
+		EntrepreneurMaterial.map.image = colorMapEntrepreneur.image
+
 	return (
 		<group {...props} dispose={null}>
 			<mesh
@@ -48,10 +54,10 @@ function LogModel({ props, isMute }: LogModelProps) {
 				scale={0.01}
 				geometry={nodes.Cylinder__0.geometry}
 				material={
-					materials["Scene_-_Root"]
+					EntrepreneurMaterial
 				}
 			/>
-			<mesh/>
+			<mesh />
 		</group>
 	);
 }

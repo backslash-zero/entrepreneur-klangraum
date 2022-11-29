@@ -148,7 +148,7 @@ function Home({
 			
 			/>	
 			<ScreenFrame setVisible={setIsVisibleHero}>
-			<Hero StartTone={StartTone}/>
+					<Hero StartTone={StartTone} hasExperienceBegan={hasExperienceBegan} />
 			</ScreenFrame>
 			{
 				isPlaying &&
