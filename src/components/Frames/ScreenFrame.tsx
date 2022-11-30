@@ -6,9 +6,10 @@ interface ScreenFrameProps {
 	children: React.ReactNode,
 	layout?: string
 	last?: boolean
+	theme?: string
 }
 
-const ScreenFrame = ({ setVisible, children, layout, last=false } : ScreenFrameProps) => {
+const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default" } : ScreenFrameProps) => {
 
 	const ContainerRef = useRef(null)
 	const ObserverCallback: IntersectionObserverCallback = (entries) => {
@@ -49,7 +50,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false } : ScreenFrameP
 			break;
 		
 		case "center":
-			style = { display: "flex", alignItems: "center", justifyItems: "center" }
+			style = { display: "flex", alignItems: "center", justifyItems: "center", fontSize: "2rem", lineHeight: "2.5rem" }
 			break;
 		
 		default:
@@ -57,8 +58,38 @@ const ScreenFrame = ({ setVisible, children, layout, last=false } : ScreenFrameP
 			break;
 	}
 
+	var background = <></>
+	
+	switch (theme) {
+		case "dark":
+			background = <div className="absolute w-full h-full z-0 bg-forest-700">
+
+						</div>
+			break;
+		
+		case "sun":
+			background = <div className="absolute w-full h-full z-0 bg-fluorange-500/10 ">
+							
+						</div>			
+						break;
+		
+		case "green":
+			background = <div className="absolute w-full h-full z-0 bg-soil-200">
+
+						</div>
+			break;
+	
+		
+		default:
+			background = <></>
+			break;
+	}
+
 	return (
 		<>
+			{
+				background
+			}
 			<div ref={ContainerRef} style={style} className=" 
 				relative
 				w-full h-screen snap-start 
@@ -67,7 +98,9 @@ const ScreenFrame = ({ setVisible, children, layout, last=false } : ScreenFrameP
 				text-xl
 				z-10
 											">
-				{children}
+				<div className="relative w-full h-full " style={style}>
+					{ children }
+				</div>
 			</div>
 		</>
 	);

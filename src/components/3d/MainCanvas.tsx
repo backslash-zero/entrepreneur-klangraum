@@ -50,62 +50,11 @@ function MainCanvas({
 	isVisibleClimate3,
 }: MainCanvasProps) {
 
-	const [size, setSize] = useState("100%")
-	const [isVisible, setVisible ] = useState(false)
-	const [materialType, setMaterialType ] = useState("wood")
-	// Rotate when isPlaying
-
-	// Scale to bottom corner in State phase
-	useEffect(() => {
-		if (isVisibleHero)
-			setVisible(false)
-		else 
-			setVisible(true)
-		
-		if (isVisibleIntro3)
-			setMaterialType("entrepreneur")
-		else if (
-			isVisibleClimate1 ||
-			isVisibleClimate2 ||
-			isVisibleClimate3
-		)
-			setMaterialType("glass")
-		else 
-			setMaterialType("wood")
-		
-		if (
-			isVisibleHero ||
-			isVisibleIntro1 ||
-			isVisibleIntro2 ||
-			isVisibleIntro3 ||
-			isVisibleClimate1 ||
-			isVisibleClimate2 ||
-			isVisibleClimate3
-		)
-		{
-			
-			setSize("100%")
-		}
-		else
-			setSize("25%")
-		
-	},[	isVisibleHero,
-		isVisibleIntro1,
-		isVisibleIntro2,
-		isVisibleIntro3,
-		isVisibleClimate1,
-		isVisibleClimate2,
-		isVisibleClimate3,])
-	// Glass shader when Climate
-	// Slider climate affects woods
-	
-
 	return (
 		<div className="fixed bottom-0 right-0
 						w-full h-full
 						z-0
-						 transition-all duration-300" style={{ width: size, height: size}
-} >
+						 transition-all duration-300">
 			<Canvas>
 				<ambientLight />
 				<group
@@ -127,9 +76,38 @@ function MainCanvas({
 						(isVisibleIntro2 || isVisibleIntro3) && 
 						<EntrLog isVisibleIntro3={isVisibleIntro3}/>
 					}
-					
 				</group>
 			</Canvas>
+			{
+
+				(	isVisibleStages1 ||
+					isVisibleStages2 ||
+					isVisibleStages3 ||
+					isVisibleStages4 ||
+					isVisibleStages5 ||
+					isVisibleStages6 ||
+					isVisibleStages7 ||
+					isVisibleStages8 ||
+					isVisibleStages9 ||
+					isVisibleStages10
+				) &&
+				<div className="
+						w-[120px] h-[120px]
+						absolute bottom-[16px] right-[16px] z-0">
+						<div className="relative w-full h-full">
+							<Canvas >
+								<ambientLight />
+								<group
+									scale={0.048} 
+									position={[0,0,-4]}
+									rotation={[31, 0, 0]}>
+									<EntrLog/>
+								</group>
+							</Canvas>
+						</div>
+					</div>
+
+			}
 		</div>
 	 );
 }	

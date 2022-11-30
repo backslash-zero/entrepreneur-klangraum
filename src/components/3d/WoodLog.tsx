@@ -92,4 +92,6 @@ function WoodLog({ position, count = 1, temp = new THREE.Object3D() }: WoodLogIn
 	);
 }
 
+useGLTF.preload("/wooden_log.glb")
+
 export default WoodLog;

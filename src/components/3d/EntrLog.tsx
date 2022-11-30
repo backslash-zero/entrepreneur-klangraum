@@ -1,7 +1,7 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useGLTF } from '@react-three/drei'
 import { useRef, useState } from "react";
-import { BoxGeometry, InstancedMesh, MeshStandardMaterial, TextureLoader } from "three";
+import { TextureLoader } from "three";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
 
@@ -65,3 +65,5 @@ function EntrLog({ position, isVisibleIntro3 } : EntrLogInterface) {
 }
 
 export default EntrLog;
+
+useGLTF.preload("/entrepreneur_log.glb")

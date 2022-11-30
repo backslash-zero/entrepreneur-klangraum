@@ -133,54 +133,54 @@ function Home({
 				isPlaying &&
 				<div ref={experienceBegin} className="w-full">
 					{/* intro */}
-					<ScreenFrame setVisible={setIsVisibleIntro1} layout="bottom">
+					<ScreenFrame setVisible={setIsVisibleIntro1} layout="bottom" theme="default">
 						<Intro1/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleIntro2} layout="top">
+					<ScreenFrame setVisible={setIsVisibleIntro2} layout="top" theme="default">
 						<Intro2/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleIntro3} layout="top">
+					<ScreenFrame setVisible={setIsVisibleIntro3} layout="top" theme="default">
 						<Intro3/>
 					</ScreenFrame>
 					{/* Stages */}
-					<ScreenFrame setVisible={setIsVisibleStages1} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages1} layout="center" theme="dark">
 						<Stages1 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages2} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages2} layout="center" theme="green">
 						<Stages2 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages3} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages3} layout="center" theme="dark">
 						<Stages3 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages4} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages4} layout="center" theme="green">
 						<Stages4 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages5} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages5} layout="center" theme="dark">
 						<Stages5 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages6} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages6} layout="center" theme="green">
 						<Stages6 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages7} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages7} layout="center" theme="dark">
 						<Stages7 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages8} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages8} layout="center" theme="green">
 						<Stages8 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages9} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages9} layout="center" theme="dark">
 						<Stages9 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages10} layout="center">
+					<ScreenFrame setVisible={setIsVisibleStages10} layout="center" theme="green">
 						<Stages10 />
 					</ScreenFrame>
 					{/* Climate */}
-					<ScreenFrame setVisible={setIsVisibleClimate1}>
+					<ScreenFrame setVisible={setIsVisibleClimate1} theme="sun">
 						<Climate1/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleClimate2}>
+					<ScreenFrame setVisible={setIsVisibleClimate2} theme="sun">
 						<Climate2/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleClimate3}>
+					<ScreenFrame setVisible={setIsVisibleClimate3} theme="sun">
 						<Climate3 setClimateSlider={setClimateSlider}/>
 					</ScreenFrame>	
 				</div>
