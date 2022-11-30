@@ -1,6 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
-import LogModel from "./LogModel";
+import EntrLog from "./EntrLog";
+import LogHandler from "./LogHandler";
+import WoodLog from "./WoodLog";
 
 interface MainCanvasProps {
 	isPlaying: boolean,
@@ -96,6 +98,7 @@ function MainCanvas({
 		isVisibleClimate3,])
 	// Glass shader when Climate
 	// Slider climate affects woods
+	
 
 	return (
 		<div className="fixed bottom-0 right-0
@@ -105,10 +108,24 @@ function MainCanvas({
 } >
 			<Canvas>
 				<ambientLight />
-				{
-					isVisible &&
-					<LogModel isMute={isMute} material="entrepreneur" />
-				}
+				<group
+					dispose={null}
+					scale={
+						isVisibleIntro1 ? 0.008 :
+						isVisibleIntro2 ? 0.03 :
+						0.01
+					}>
+					{
+						isVisibleIntro1 && 
+						<WoodLog count={
+							10
+						} />
+					}
+					{
+						isVisibleIntro2 && 
+						<EntrLog />
+					}
+				</group>
 			</Canvas>
 		</div>
 	 );
