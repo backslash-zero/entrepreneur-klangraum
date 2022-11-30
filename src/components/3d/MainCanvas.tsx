@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import EntrLog from "./EntrLog";
 import LogHandler from "./LogHandler";
 import WoodLog from "./WoodLog";
@@ -103,7 +103,7 @@ function MainCanvas({
 	return (
 		<div className="fixed bottom-0 right-0
 						w-full h-full
-						 z-0
+						z-0
 						 transition-all duration-300" style={{ width: size, height: size}
 } >
 			<Canvas>
@@ -113,8 +113,10 @@ function MainCanvas({
 					scale={
 						isVisibleIntro1 ? 0.008 :
 						isVisibleIntro2 ? 0.03 :
+						isVisibleIntro3 ? 0.02 :
 						0.01
-					}>
+					}
+				>
 					{
 						isVisibleIntro1 && 
 						<WoodLog count={
@@ -122,9 +124,10 @@ function MainCanvas({
 						} />
 					}
 					{
-						isVisibleIntro2 && 
-						<EntrLog />
+						(isVisibleIntro2 || isVisibleIntro3) && 
+						<EntrLog isVisibleIntro3={isVisibleIntro3}/>
 					}
+					
 				</group>
 			</Canvas>
 		</div>

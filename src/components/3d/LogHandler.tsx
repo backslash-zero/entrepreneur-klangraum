@@ -10,17 +10,17 @@ interface WoodLogProps {
 }
 
 function LogHandler(props: JSX.IntrinsicElements["group"]) {
-	const refGroup = useRef<THREE.Group>(null!)
+	const ref = useRef<THREE.Group>(null!)
 
-	// useFrame((state, delta) => {
-	// 	if (!isMute)
-	// 		refGroup.current.rotation.y += 0.01
-	// })
+	useFrame((state, delta) => {
+			ref.current.rotation.y += 0.01
+	})
 
 	const EntrepreneurTexture = useLoader(TextureLoader, 'log_entrepreneur.png')
 
 	return (
 		<group
+			ref={ref}
 			{...props}
 			dispose={null}
 			scale={0.008}

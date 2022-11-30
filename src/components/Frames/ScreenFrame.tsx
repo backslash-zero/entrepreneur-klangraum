@@ -1,12 +1,14 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { CSSProperties, Dispatch, SetStateAction, useEffect, useRef } from "react";
 import Scroll from "../commons/Scroll";
 
 interface ScreenFrameProps {
 	setVisible: Dispatch<SetStateAction<boolean>>,
 	children: React.ReactNode,
+	layout?: string
+	last?: boolean
 }
 
-const ScreenFrame = ({ setVisible, children } : ScreenFrameProps) => {
+const ScreenFrame = ({ setVisible, children, layout, last=false } : ScreenFrameProps) => {
 
 	const ContainerRef = useRef(null)
 	const ObserverCallback: IntersectionObserverCallback = (entries) => {
@@ -35,15 +37,37 @@ const ScreenFrame = ({ setVisible, children } : ScreenFrameProps) => {
 			)
 		}, []
 	)
+	var style: CSSProperties
 	
+	switch (layout) {
+		case "top":
+			style = { display: "flex" }
+			break;
+		
+		case "bottom":
+			style = { display: "flex", alignItems: "flex-end" }
+			break;
+		
+		case "center":
+			style = { display: "flex", alignItems: "center", justifyItems: "center" }
+			break;
+		
+		default:
+			style = {}
+			break;
+	}
+
 	return (
 		<>
-		<div ref={ContainerRef} className=" w-full h-screen snap-start bg-soil-400
-											p-4 pt-24
-											overflow-hidden
-											text-xl
+			<div ref={ContainerRef} style={style} className=" 
+				relative
+				w-full h-screen snap-start 
+				p-4 pt-24
+				overflow-hidden
+				text-xl
+				z-10
 											">
-			{children}
+				{children}
 			</div>
 		</>
 	);

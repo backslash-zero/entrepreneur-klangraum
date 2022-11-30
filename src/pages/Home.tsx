@@ -85,27 +85,6 @@ function Home({
 	
 	return (
 		<>
-		<MainCanvas
-			isPlaying={isPlaying}
-			isMute={isMute}
-			climateSlider={climateSlider}
-			isVisibleHero={isVisibleHero}
-			isVisibleIntro1={isVisibleIntro1}
-			isVisibleIntro2={isVisibleIntro2}
-			isVisibleIntro3={isVisibleIntro3}
-			isVisibleStages1={isVisibleStages1}
-			isVisibleStages2={isVisibleStages2}
-			isVisibleStages3={isVisibleStages3}
-			isVisibleStages4={isVisibleStages4}
-			isVisibleStages5={isVisibleStages5}
-			isVisibleStages6={isVisibleStages6}
-			isVisibleStages7={isVisibleStages7}
-			isVisibleStages8={isVisibleStages8}
-			isVisibleStages9={isVisibleStages9}
-			isVisibleStages10={isVisibleStages10}
-			isVisibleClimate1={isVisibleClimate1}
-			isVisibleClimate2={isVisibleClimate2}
-			isVisibleClimate3={isVisibleClimate3}/>
 		<Timeline
 			isVisibleStages1={isVisibleStages1}
 			isVisibleStages2={isVisibleStages2}
@@ -120,7 +99,7 @@ function Home({
 		/>
 	
 		<div className='w-screen h-full snap-y snap-mandatory snap-always scroll-smooth 
-						bg-soil-400 text-fluorange-500 '>
+						bg-soil-400 text-fluorange-500 z-10'>
 			<FrameSounds
 							isPlaying={isPlaying}
 							isVisibleHero={isVisibleHero}
@@ -154,45 +133,45 @@ function Home({
 				isPlaying &&
 				<div ref={experienceBegin} className="w-full">
 					{/* intro */}
-					<ScreenFrame setVisible={setIsVisibleIntro1}>
+					<ScreenFrame setVisible={setIsVisibleIntro1} layout="bottom">
 						<Intro1/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleIntro2}>
+					<ScreenFrame setVisible={setIsVisibleIntro2} layout="top">
 						<Intro2/>
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleIntro3}>
+					<ScreenFrame setVisible={setIsVisibleIntro3} layout="top">
 						<Intro3/>
 					</ScreenFrame>
 					{/* Stages */}
-					<ScreenFrame setVisible={setIsVisibleStages1}>
-						<Stages1/>
+					<ScreenFrame setVisible={setIsVisibleStages1} layout="center">
+						<Stages1 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages2}>
-						<Stages2/>
+					<ScreenFrame setVisible={setIsVisibleStages2} layout="center">
+						<Stages2 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages3}>
-						<Stages3/>
+					<ScreenFrame setVisible={setIsVisibleStages3} layout="center">
+						<Stages3 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages4}>
-						<Stages4/>
+					<ScreenFrame setVisible={setIsVisibleStages4} layout="center">
+						<Stages4 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages5}>
-						<Stages5/>
+					<ScreenFrame setVisible={setIsVisibleStages5} layout="center">
+						<Stages5 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages6}>
-						<Stages6/>
+					<ScreenFrame setVisible={setIsVisibleStages6} layout="center">
+						<Stages6 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages7}>
-						<Stages7/>
+					<ScreenFrame setVisible={setIsVisibleStages7} layout="center">
+						<Stages7 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages8}>
-						<Stages8/>
+					<ScreenFrame setVisible={setIsVisibleStages8} layout="center">
+						<Stages8 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages9}>
-						<Stages9/>
+					<ScreenFrame setVisible={setIsVisibleStages9} layout="center">
+						<Stages9 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages10}>
-						<Stages10/>
+					<ScreenFrame setVisible={setIsVisibleStages10} layout="center">
+						<Stages10 />
 					</ScreenFrame>
 					{/* Climate */}
 					<ScreenFrame setVisible={setIsVisibleClimate1}>
@@ -207,6 +186,27 @@ function Home({
 				</div>
 			}
 			</div>
+			<MainCanvas
+			isPlaying={isPlaying}
+			isMute={isMute}
+			climateSlider={climateSlider}
+			isVisibleHero={isVisibleHero}
+			isVisibleIntro1={isVisibleIntro1}
+			isVisibleIntro2={isVisibleIntro2}
+			isVisibleIntro3={isVisibleIntro3}
+			isVisibleStages1={isVisibleStages1}
+			isVisibleStages2={isVisibleStages2}
+			isVisibleStages3={isVisibleStages3}
+			isVisibleStages4={isVisibleStages4}
+			isVisibleStages5={isVisibleStages5}
+			isVisibleStages6={isVisibleStages6}
+			isVisibleStages7={isVisibleStages7}
+			isVisibleStages8={isVisibleStages8}
+			isVisibleStages9={isVisibleStages9}
+			isVisibleStages10={isVisibleStages10}
+			isVisibleClimate1={isVisibleClimate1}
+			isVisibleClimate2={isVisibleClimate2}
+			isVisibleClimate3={isVisibleClimate3}/>
 		</>	);
 }
 

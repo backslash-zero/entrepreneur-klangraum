@@ -16,10 +16,11 @@ type GLTFResult = GLTF & {
 
 
 interface EntrLogInterface {
-	position? : THREE.Vector3
+	position?: THREE.Vector3
+	isVisibleIntro3?: boolean
 }
 
-function EntrLog({ position } : EntrLogInterface) {
+function EntrLog({ position, isVisibleIntro3 } : EntrLogInterface) {
 	
 	
 	const { nodes, materials } = useGLTF("/entrepreneur_log.glb") as any
@@ -32,17 +33,34 @@ function EntrLog({ position } : EntrLogInterface) {
 
 	materials["Scene_-_Root"].map.image = EntrepreneurTexture.image
 
+	const ref = useRef<any>()
+
+	useFrame((state, delta) => {
+		if (ref.current && ref.current.rotation)
+			ref.current.rotation.y += 0.005
+	})
+
+
+
 	return (
+		<group
+			position={isVisibleIntro3 ? [0, 0, 0] :[0, 0, 0]}
+			rotation={[90,180,0]}
+			ref={ref}
+		>
 			<mesh
 				// castShadow
-				rotation={[90,0,0]}
+				position={
+					[0, 0, -20]
+				}
 				receiveShadow
-				position={position}
+				// position={position}
 				geometry={nodes.Cylinder__0.geometry}
 				material={
 					materials["Scene_-_Root"]
 				}
-			/>
+				/>
+		</group>
 	);
 }
 

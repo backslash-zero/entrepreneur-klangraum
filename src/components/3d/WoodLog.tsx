@@ -43,28 +43,32 @@ function WoodLog({ position, count = 1, temp = new THREE.Object3D() }: WoodLogIn
 			|| index === 2
 			|| index === 6
 		)
-			return (HSpace * 0 - offset)
+			return (HSpace * 0)
 		else if (index === 1
 			|| index === 3
 			|| index === 7)
-			return (HSpace * 1 - offset)
+			return (HSpace * 1)
 		else if (index === 2
 			|| index === 4
 			|| index === 8)
-			return (HSpace * 2 - offset)
+			return (HSpace * 2)
 		else
-			return (HSpace * 3 - offset)
+			return (HSpace * 3)
 	}
 	useEffect(() => {
 		if (count === 10)
 		{
 			for (let i = 0; i < count; i++) {
-				temp.position.set(getPosX(i), getPosY(i), 0)	
-				temp.rotation.set(0, 0, Math.random() * 360)	
-				temp.rotation.set(90, 0, 0)	
+				temp.position.set(getPosX(i) - offset, getPosY(i) + (offset/2), 0)	
+				
+				temp.rotation.set(0, Math.random() * 360, 0)	
 				temp.updateMatrix()
 				if (InstancedRef.current)
 					InstancedRef.current.setMatrixAt(i, temp.matrix)
+				temp.rotation.set(90, 0, 0)	
+					temp.updateMatrix()
+					if (InstancedRef.current)
+						InstancedRef.current.setMatrixAt(i, temp.matrix)
 			}
 		}
 	
