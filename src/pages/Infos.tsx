@@ -32,8 +32,8 @@ function Infos() {
 					<h2 className="text-3xl font-display mt-4 mb-2">Credits</h2>
 					<div className="flex flex-col gap-2">
 						<Person position="Musik und Sound"				name="Yoav Pasovsky" />
-						<Person position="Programmierung und Webdesign"	name="Célestin Meunier" link="https://celest.in/"/>
-						<Person position="Design"						name="Helin Ulas" link=""/>
+						<Person position="Programmierung und Webdesign"	name="Célestin Meunier"	link="https://celest.in/"/>
+						<Person position="Design"						name="Helin Ulas"		link="https://helinulas.info/"/>
 						<Person position="Digital-Dramaturgie"			name="Ilja Mirsky" />
 						<Person position="Dramaturgie"					name="Ewald Palmetshoher" />
 						<Person position="Wissenschaftliche Beratung" name="Sebastian Seibold, Technische Universität München" />

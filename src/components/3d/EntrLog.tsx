@@ -1,9 +1,10 @@
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useGLTF } from '@react-three/drei'
+import { Environment, useGLTF } from '@react-three/drei'
 import { useRef, useState } from "react";
-import { TextureLoader } from "three";
+import { BoxGeometry, MeshPhysicalMaterial, Plane, PlaneGeometry, TextureLoader } from "three";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,9 +19,10 @@ type GLTFResult = GLTF & {
 interface EntrLogInterface {
 	position?: THREE.Vector3
 	isVisibleIntro3?: boolean
+	isVisibleClimate?: boolean
 }
 
-function EntrLog({ position, isVisibleIntro3 } : EntrLogInterface) {
+function EntrLog({ position, isVisibleIntro3, isVisibleClimate } : EntrLogInterface) {
 	
 	
 	const { nodes, materials } = useGLTF("/entrepreneur_log.glb") as any
@@ -35,9 +37,26 @@ function EntrLog({ position, isVisibleIntro3 } : EntrLogInterface) {
 
 	const ref = useRef<any>()
 
+	const glassMaterial = new MeshPhysicalMaterial(
+	)
+
+	// sglassMaterial.bumpMap = materials["Scene_-_Root"].bumpMap
+	glassMaterial.transmission = 1
+	glassMaterial.roughness = 0
+	glassMaterial.thickness = 1
+	glassMaterial.envMapIntensity = 2
+	glassMaterial.ior = 1
+	glassMaterial.clearcoat = 1
+	
+
 	useFrame((state, delta) => {
 		if (ref.current && ref.current.rotation)
+		{
 			ref.current.rotation.y += 0.005
+			if (isVisibleClimate)
+				ref.current.rotation.x += 0.003
+				ref.current.rotation.z += 0.003
+		}
 	})
 
 
@@ -48,18 +67,37 @@ function EntrLog({ position, isVisibleIntro3 } : EntrLogInterface) {
 			rotation={[90,180,0]}
 			ref={ref}
 		>
-			<mesh
-				// castShadow
-				position={
-					[0, 0, -20]
-				}
-				receiveShadow
-				// position={position}
-				geometry={nodes.Cylinder__0.geometry}
-				material={
-					materials["Scene_-_Root"]
-				}
-				/>
+			
+			{
+				isVisibleClimate ?
+					<>
+						<mesh
+							// castShadow
+							position={
+								[0, 0, -20]
+							}
+							receiveShadow
+							// position={position}
+							geometry={nodes.Cylinder__0.geometry}
+							material={
+								glassMaterial
+							}
+							/>
+					</>
+					:
+					<mesh
+						// castShadow
+						position={
+							[0, 0, -20]
+						}
+						receiveShadow
+						// position={position}
+						geometry={nodes.Cylinder__0.geometry}
+						material={
+							materials["Scene_-_Root"]
+						}
+					/>
+			}
 		</group>
 	);
 }

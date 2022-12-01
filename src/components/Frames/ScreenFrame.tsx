@@ -40,6 +40,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		}, []
 	)
 	var style: CSSProperties
+	var TextStyle: CSSProperties
 	
 	switch (layout) {
 		case "top":
@@ -69,17 +70,14 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 			break;
 		
 		case "sun":
-			background = <div className="absolute w-full h-full z-0 bg-fluorange-500/10 ">
+			background = <div className="absolute w-full h-full z-0 bg-forest-700 text-soil-200 ">
 							
 						</div>			
 						break;
 		
 		case "green":
-			background = <div className="absolute w-full h-full z-0 bg-soil-200">
-
-						</div>
+			background = <div className="absolute w-full h-full z-0 bg-soil-200"></div>;
 			break;
-	
 		
 		default:
 			background = <></>
@@ -94,17 +92,17 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 			{
 				background
 			}
-			<div ref={ContainerRef} style={style} className=" 
+			<Div100vh ref={ContainerRef} className=" 
 				relative
 				w-full
-				h-full 
+				 
 				p-4 pt-24
 				text-xl
 				z-10">
 				<div className="relative w-full h-full " style={style}>
 					{ children }
 				</div>
-			</div>
+			</Div100vh>
 		</Div100vh>
 	);
 }
