@@ -1,4 +1,5 @@
 import { CSSProperties, Dispatch, SetStateAction, useEffect, useRef } from "react";
+import Div100vh from "react-div-100vh";
 import Scroll from "../commons/Scroll";
 
 interface ScreenFrameProps {
@@ -86,23 +87,25 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 	}
 
 	return (
-		<>
+		<Div100vh className="
+				relative
+				w-full snap-start
+				overflow-hidden">
 			{
 				background
 			}
 			<div ref={ContainerRef} style={style} className=" 
 				relative
-				w-full h-screen snap-start 
+				w-full
+				h-full 
 				p-4 pt-24
-				overflow-hidden
 				text-xl
-				z-10
-											">
+				z-10">
 				<div className="relative w-full h-full " style={style}>
 					{ children }
 				</div>
 			</div>
-		</>
+		</Div100vh>
 	);
 }
 

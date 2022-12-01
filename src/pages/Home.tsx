@@ -53,7 +53,7 @@ function Home({
 		{
 			if (experienceBegin && experienceBegin.current)
 			{
-				experienceBegin.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+				// experienceBegin.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
 				setHasExperienceBegan(true)
 			}
 		}
@@ -98,7 +98,7 @@ function Home({
 			isVisibleStages10={isVisibleStages10}
 		/>
 	
-		<div className='w-screen h-full snap-y snap-mandatory snap-always scroll-smooth 
+		<div className='w-screen h-full
 						bg-soil-400 text-fluorange-500 z-10'>
 			<FrameSounds
 							isPlaying={isPlaying}
@@ -131,7 +131,7 @@ function Home({
 			</ScreenFrame>
 			{
 				isPlaying &&
-				<div ref={experienceBegin} className="w-full">
+				<div ref={experienceBegin} className="h-full w-full snap-y snap-mandatory snap-always scroll-smooth ">
 					{/* intro */}
 					<ScreenFrame setVisible={setIsVisibleIntro1} layout="top" theme="default">
 						<Intro1/>
