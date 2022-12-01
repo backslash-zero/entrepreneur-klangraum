@@ -11,7 +11,7 @@ function Climate3({ setClimateSlider } : Climate3Props) {
 	}
 
 	return ( 
-		<div className="w-full h-full relative">
+		<div className="w-full h-full relative text-forest-300">
 			<div>
 				<p>
 					Der Anstieg der globalen Temperaturen kann zu einer Beschleunigung dieser Zersetzung führen. Der gebundene Kohlenstoff wird also schneller an die Atmosphäre wieder abgegeben. Abhängig von Umgebungstemperatur und Feuchtigkeit kann Totholz also eine nicht zu vernachlässigende Rolle im Kohlenstoffzyklus und der globalen Erwärmung der kommenden Jahrzehnte spielen.

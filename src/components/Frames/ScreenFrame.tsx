@@ -1,4 +1,5 @@
 import { CSSProperties, Dispatch, SetStateAction, useEffect, useRef } from "react";
+import Div100vh from "react-div-100vh";
 import Scroll from "../commons/Scroll";
 
 interface ScreenFrameProps {
@@ -39,6 +40,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		}, []
 	)
 	var style: CSSProperties
+	var TextStyle: CSSProperties
 	
 	switch (layout) {
 		case "top":
@@ -68,17 +70,14 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 			break;
 		
 		case "sun":
-			background = <div className="absolute w-full h-full z-0 bg-fluorange-500/10 ">
+			background = <div className="absolute w-full h-full z-0 bg-forest-700 text-soil-200 ">
 							
 						</div>			
 						break;
 		
 		case "green":
-			background = <div className="absolute w-full h-full z-0 bg-soil-200">
-
-						</div>
+			background = <div className="absolute w-full h-full z-0 bg-soil-200"></div>;
 			break;
-	
 		
 		default:
 			background = <></>
@@ -86,23 +85,25 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 	}
 
 	return (
-		<>
+		<Div100vh className="
+				relative
+				w-full snap-start
+				overflow-hidden">
 			{
 				background
 			}
-			<div ref={ContainerRef} style={style} className=" 
+			<Div100vh ref={ContainerRef} className=" 
 				relative
-				w-full h-screen snap-start 
+				w-full
+				 
 				p-4 pt-24
-				overflow-hidden
 				text-xl
-				z-10
-											">
+				z-10">
 				<div className="relative w-full h-full " style={style}>
 					{ children }
 				</div>
-			</div>
-		</>
+			</Div100vh>
+		</Div100vh>
 	);
 }
 

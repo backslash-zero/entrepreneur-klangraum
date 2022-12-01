@@ -1,3 +1,4 @@
+import { Environment } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import LogSpinner from "../commons/LogSpinner";
@@ -66,7 +67,7 @@ function MainCanvas({
 	else
 		SpinnerOpacity = 0
 	
-	if (isVisibleIntro2 || isVisibleIntro3)
+	if (isVisibleIntro2 || isVisibleIntro3 || isVisibleClimate3)
 		TruncOpacity = 1
 	else
 		TruncOpacity = 0
@@ -80,6 +81,13 @@ function MainCanvas({
 				className="transition-opacity z-0"
 				style={{ opacity: TruncOpacity }}>
 				<ambientLight />
+				{
+				isVisibleClimate3 &&
+					<Environment
+						background={false}
+						files="env.hdr"
+					/>
+				}
 				<group
 					dispose={null}
 					scale={
@@ -91,7 +99,7 @@ function MainCanvas({
 				>
 					{
 						
-						<EntrLog isVisibleIntro3={isVisibleIntro3}/>
+						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={isVisibleClimate3} />
 					}
 				</group>
 			</Canvas>
