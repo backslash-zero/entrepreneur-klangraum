@@ -99,7 +99,7 @@ function MainCanvas({
 				>
 					{
 						
-						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={isVisibleClimate3} />
+						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={isVisibleClimate3 || isVisibleClimate2} />
 					}
 				</group>
 			</Canvas>

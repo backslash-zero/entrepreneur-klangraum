@@ -54,8 +54,15 @@ function EntrLog({ position, isVisibleIntro3, isVisibleClimate } : EntrLogInterf
 		{
 			ref.current.rotation.y += 0.005
 			if (isVisibleClimate)
+			{
 				ref.current.rotation.x += 0.003
 				ref.current.rotation.z += 0.003
+			}
+			else
+			{
+				ref.current.rotation.x = 90
+				ref.current.rotation.z = 0 
+			}
 		}
 	})
 
