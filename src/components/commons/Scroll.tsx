@@ -2,8 +2,8 @@ import { FiChevronsDown } from "react-icons/fi";
 
 function Scroll() {
 	return (
-		<div className="absolute w-full flex items-center justify-center bottom-2 
-						animate-pulse text-4xl ">
+		<div className="w-full flex items-center justify-center
+						animate-pulse text-4xl text-fluorange-500">
 			<FiChevronsDown strokeWidth={1}/>
 		</div>);
 }

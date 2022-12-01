@@ -34,6 +34,9 @@ module.exports = {
       },
       boxShadow: {
         'mainButton': '0 0px 16px 0px rgb(0 0 0 / 0.1), 0 8px 8px -4px rgb(0 0 0 / 0.1);'
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
       }
     },
   },

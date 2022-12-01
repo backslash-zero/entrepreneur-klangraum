@@ -133,7 +133,7 @@ function Home({
 				isPlaying &&
 				<div ref={experienceBegin} className="w-full">
 					{/* intro */}
-					<ScreenFrame setVisible={setIsVisibleIntro1} layout="bottom" theme="default">
+					<ScreenFrame setVisible={setIsVisibleIntro1} layout="top" theme="default">
 						<Intro1/>
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleIntro2} layout="top" theme="default">

@@ -1,8 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
+import LogSpinner from "../commons/LogSpinner";
+import Scroll from "../commons/Scroll";
 import EntrLog from "./EntrLog";
-import LogHandler from "./LogHandler";
-import WoodLog from "./WoodLog";
 
 interface MainCanvasProps {
 	isPlaying: boolean,
@@ -50,63 +50,64 @@ function MainCanvas({
 	isVisibleClimate3,
 }: MainCanvasProps) {
 
+	var SpinnerOpacity = 0
+	var TruncOpacity = 0
+	if (isVisibleStages1 ||
+		isVisibleStages2 ||
+		isVisibleStages3 ||
+		isVisibleStages4 ||
+		isVisibleStages5 ||
+		isVisibleStages6 ||
+		isVisibleStages7 ||
+		isVisibleStages8 ||
+		isVisibleStages9 ||
+		isVisibleStages10)
+		SpinnerOpacity = 1
+	else
+		SpinnerOpacity = 0
+	
+	if (isVisibleIntro2 || isVisibleIntro3)
+		TruncOpacity = 1
+	else
+		TruncOpacity = 0
+
 	return (
 		<div className="fixed bottom-0 right-0
 						w-full h-full
 						z-0
 						 transition-all duration-300">
-			<Canvas>
+			<Canvas
+				className="transition-opacity z-0"
+				style={{ opacity: TruncOpacity }}>
 				<ambientLight />
 				<group
 					dispose={null}
 					scale={
-						isVisibleIntro1 ? 0.008 :
+						isVisibleIntro1 ? 0.03 :
 						isVisibleIntro2 ? 0.03 :
 						isVisibleIntro3 ? 0.02 :
-						0.01
+						0.02
 					}
 				>
 					{
-						isVisibleIntro1 && 
-						<WoodLog count={
-							10
-						} />
-					}
-					{
-						(isVisibleIntro2 || isVisibleIntro3) && 
+						
 						<EntrLog isVisibleIntro3={isVisibleIntro3}/>
 					}
 				</group>
 			</Canvas>
+			<div className="transition-opacity z-0"
+				style={{ opacity: SpinnerOpacity }}>
+				<LogSpinner></LogSpinner>
+			</div>
 			{
-
-				(	isVisibleStages1 ||
-					isVisibleStages2 ||
-					isVisibleStages3 ||
-					isVisibleStages4 ||
-					isVisibleStages5 ||
-					isVisibleStages6 ||
-					isVisibleStages7 ||
-					isVisibleStages8 ||
-					isVisibleStages9 ||
-					isVisibleStages10
-				) &&
+				!(isVisibleHero || isVisibleClimate3) &&
 				<div className="
-						w-[120px] h-[120px]
-						absolute bottom-[16px] right-[16px] z-0">
-						<div className="relative w-full h-full">
-							<Canvas >
-								<ambientLight />
-								<group
-									scale={0.048} 
-									position={[0,0,-4]}
-									rotation={[31, 0, 0]}>
-									<EntrLog/>
-								</group>
-							</Canvas>
-						</div>
-					</div>
-
+						absolute
+						w-full flex items-center justify-center
+						bottom-8
+					">
+					<Scroll/>
+				</div>
 			}
 		</div>
 	 );
