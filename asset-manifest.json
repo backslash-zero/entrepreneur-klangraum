@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.4313ccff.css",
-    "main.js": "/static/js/main.5ff46081.js",
+    "main.css": "/static/css/main.0a7ef52e.css",
+    "main.js": "/static/js/main.2db44867.js",
     "static/js/787.239a4e72.chunk.js": "/static/js/787.239a4e72.chunk.js",
     "static/media/example.mp3": "/static/media/example.7a2fc3895bd9af1a7ff1.mp3",
+    "static/media/SideTrunc3.png": "/static/media/SideTrunc3.c93718d927b7e3a9b345.png",
+    "static/media/SideTrunc2.png": "/static/media/SideTrunc2.ed168209d75060350064.png",
+    "static/media/SideTrunc1.png": "/static/media/SideTrunc1.042b857cd0384494a3bb.png",
+    "static/media/SideTrunc30.png": "/static/media/SideTrunc30.2c9ccc6651bde166cada.png",
     "static/media/NaNSuccessTitlingTRIAL-Normal.woff2": "/static/media/NaNSuccessTitlingTRIAL-Normal.79810c7bcfecafa6f103.woff2",
     "static/media/SuisseIntl-MediumItalic-WebS.woff2": "/static/media/SuisseIntl-MediumItalic-WebS.97362acfd9f4d1ca6cad.woff2",
     "static/media/SuisseIntl-RegularItalic-WebS.woff2": "/static/media/SuisseIntl-RegularItalic-WebS.f740a889f4a1fc60d984.woff2",
@@ -22,12 +26,12 @@
     "static/media/SuisseIntl-Ultralight-WebS.woff2": "/static/media/SuisseIntl-Ultralight-WebS.76fc4bb161fef1e476eb.woff2",
     "static/media/SuisseIntl-Regular-WebS.woff2": "/static/media/SuisseIntl-Regular-WebS.7328f724fa58bdc7a3a7.woff2",
     "index.html": "/index.html",
-    "main.4313ccff.css.map": "/static/css/main.4313ccff.css.map",
-    "main.5ff46081.js.map": "/static/js/main.5ff46081.js.map",
+    "main.0a7ef52e.css.map": "/static/css/main.0a7ef52e.css.map",
+    "main.2db44867.js.map": "/static/js/main.2db44867.js.map",
     "787.239a4e72.chunk.js.map": "/static/js/787.239a4e72.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4313ccff.css",
-    "static/js/main.5ff46081.js"
+    "static/css/main.0a7ef52e.css",
+    "static/js/main.2db44867.js"
   ]
 }
