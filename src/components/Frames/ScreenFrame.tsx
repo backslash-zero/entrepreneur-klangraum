@@ -1,4 +1,5 @@
 import { CSSProperties, Dispatch, SetStateAction, useEffect, useRef } from "react";
+import InsectTexture from '../../assets/images/InsectTexture.svg'
 import Div100vh from "react-div-100vh";
 import Scroll from "../commons/Scroll";
 
@@ -52,7 +53,12 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 			break;
 		
 		case "center":
-			style = { display: "flex", alignItems: "center", justifyItems: "center", fontSize: "2rem", lineHeight: "2.5rem" }
+			style = { 
+				paddingTop: "30%", 
+				fontSize: "2rem", 
+				lineHeight: "2.5rem",
+
+			}
 			break;
 		
 		default:
@@ -64,14 +70,14 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 	
 	switch (theme) {
 		case "dark":
-			background = <div className="absolute w-full h-full z-0 bg-forest-700">
+			background = <div className="absolute w-full h-full z-0 bg-forest-700 ">
 
 						</div>
 			break;
 		
 		case "sun":
-			background = <div className="absolute w-full h-full z-0 bg-forest-700 text-soil-200 ">
-							
+			background = <div className="absolute w-full h-full z-0 bg-soil-200 ">
+	
 						</div>			
 						break;
 		
@@ -85,17 +91,14 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 	}
 
 	return (
-		<Div100vh className="
+		<div className="
 				relative
 				w-full snap-start
 				overflow-hidden">
-			{
-				background
-			}
+					{ background }
 			<Div100vh ref={ContainerRef} className=" 
 				relative
 				w-full
-				 
 				p-4 pt-24
 				text-xl
 				z-10">
@@ -103,7 +106,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 					{ children }
 				</div>
 			</Div100vh>
-		</Div100vh>
+		</div>
 	);
 }
 

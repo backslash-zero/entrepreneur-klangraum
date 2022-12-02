@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 // Components
-
 import Hero from "../components/Frames/Hero";
 
 import Intro1 from "../components/Frames/Intro/Intro1";
@@ -131,7 +130,9 @@ function Home({
 			</ScreenFrame>
 			{
 				isPlaying &&
-				<div ref={experienceBegin} className="h-full w-full snap-y snap-mandatory snap-always scroll-smooth ">
+					<div ref={experienceBegin} className="	h-full w-full 
+															snap-y snap-mandatory snap-always
+															scroll-smooth ">
 					{/* intro */}
 					<ScreenFrame setVisible={setIsVisibleIntro1} layout="top" theme="default">
 						<Intro1/>
@@ -146,31 +147,31 @@ function Home({
 					<ScreenFrame setVisible={setIsVisibleStages1} layout="center" theme="dark">
 						<Stages1 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages2} layout="center" theme="green">
+					<ScreenFrame setVisible={setIsVisibleStages2} layout="center" theme="dark">
 						<Stages2 />
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleStages3} layout="center" theme="dark">
 						<Stages3 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages4} layout="center" theme="green">
+					<ScreenFrame setVisible={setIsVisibleStages4} layout="center" theme="dark">
 						<Stages4 />
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleStages5} layout="center" theme="dark">
 						<Stages5 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages6} layout="center" theme="green">
+					<ScreenFrame setVisible={setIsVisibleStages6} layout="center" theme="dark">
 						<Stages6 />
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleStages7} layout="center" theme="dark">
 						<Stages7 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages8} layout="center" theme="green">
+					<ScreenFrame setVisible={setIsVisibleStages8} layout="center" theme="dark">
 						<Stages8 />
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleStages9} layout="center" theme="dark">
 						<Stages9 />
 					</ScreenFrame>
-					<ScreenFrame setVisible={setIsVisibleStages10} layout="center" theme="green">
+					<ScreenFrame setVisible={setIsVisibleStages10} layout="center" theme="dark">
 						<Stages10 />
 					</ScreenFrame>
 					{/* Climate */}

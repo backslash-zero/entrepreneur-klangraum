@@ -95,7 +95,7 @@ function Timeline({
 			<div className="fixed w-full h-6 top-7 left-5 
 							z-30
 							flex">
-			<div className="w-full h-full bg-forest-10 rounded-full 
+			<div className="w-full h-full rounded-full 
 							flex items-center p-1
 							border border-1 border-fluorange-500">
 					<div className="w-full h-full bg-fluorange-500/25 rounded-full

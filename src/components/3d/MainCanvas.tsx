@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import LogSpinner from "../commons/LogSpinner";
 import Scroll from "../commons/Scroll";
 import EntrLog from "./EntrLog";
+import SmokeBackground from '../SmokeBackground'
 
 interface MainCanvasProps {
 	isPlaying: boolean,
 	isMute: boolean,
-	climateSlider?: number,
+	climateSlider: number,
 	isVisibleHero: boolean,
 	isVisibleIntro1: boolean,
 	isVisibleIntro2: boolean,
@@ -53,6 +54,9 @@ function MainCanvas({
 
 	var SpinnerOpacity = 0
 	var TruncOpacity = 0
+	var SmokeOpacity = 0
+
+	// Spinner
 	if (isVisibleStages1 ||
 		isVisibleStages2 ||
 		isVisibleStages3 ||
@@ -67,22 +71,36 @@ function MainCanvas({
 	else
 		SpinnerOpacity = 0
 	
-	if (isVisibleIntro2 || isVisibleIntro3 || isVisibleClimate3)
+	// Trunc
+	if (isVisibleIntro2 || isVisibleIntro3 )
 		TruncOpacity = 1
 	else
 		TruncOpacity = 0
-
+		
+	// Smoke 
+	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
+		SmokeOpacity = 1
+	else
+		SmokeOpacity = 0
+	// Spinner
+	
 	return (
 		<div className="fixed bottom-0 right-0
 						w-full h-full
 						z-0
 						 transition-all duration-300">
+			{
+				<div className="absolute w-full h-full transition-opacity"
+					style={{ opacity: SmokeOpacity }}>
+					<SmokeBackground ammount={climateSlider}/>
+				</div>
+			}
 			<Canvas
 				className="transition-opacity z-0"
 				style={{ opacity: TruncOpacity }}>
 				<ambientLight />
 				{
-				isVisibleClimate3 &&
+					isVisibleClimate3 &&
 					<Environment
 						background={false}
 						files="env.hdr"
@@ -99,11 +117,11 @@ function MainCanvas({
 				>
 					{
 						
-						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={isVisibleClimate3 || isVisibleClimate2} />
+						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={false} climateSlider={climateSlider} />
 					}
 				</group>
 			</Canvas>
-			<div className="transition-opacity z-0"
+			<div className="transition-opacity duration-300 z-0"
 				style={{ opacity: SpinnerOpacity }}>
 				<LogSpinner></LogSpinner>
 			</div>
