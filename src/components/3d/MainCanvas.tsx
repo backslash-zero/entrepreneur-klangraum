@@ -78,7 +78,7 @@ function MainCanvas({
 		TruncOpacity = 0
 		
 	// Smoke 
-	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
+	if (isVisibleHero || isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
 		SmokeOpacity = 1
 	else
 		SmokeOpacity = 0
@@ -90,7 +90,7 @@ function MainCanvas({
 						z-0
 						 transition-all duration-300">
 			{
-				<div className="absolute w-full h-full transition-opacity"
+				<div className="absolute w-full h-full transition-opacity duration-1000"
 					style={{ opacity: SmokeOpacity }}>
 					<SmokeBackground ammount={climateSlider}/>
 				</div>

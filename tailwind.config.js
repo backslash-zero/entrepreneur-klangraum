@@ -5,6 +5,8 @@ module.exports = {
   ],
   theme: {
     colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
       'forest': {
         100 : '#eaf2ef',
         200 : '#b2c9c1',
