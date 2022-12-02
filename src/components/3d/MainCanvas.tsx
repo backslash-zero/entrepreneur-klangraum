@@ -7,6 +7,7 @@ import EntrLog from "./EntrLog";
 import SmokeBackground from '../SmokeBackground'
 
 interface MainCanvasProps {
+	hasExperienceBegan: boolean,
 	isPlaying: boolean,
 	isMute: boolean,
 	climateSlider: number,
@@ -30,6 +31,7 @@ interface MainCanvasProps {
 } 
 
 function MainCanvas({ 
+	hasExperienceBegan,
 	isPlaying,
 	isMute,
 	climateSlider,
@@ -78,7 +80,7 @@ function MainCanvas({
 		TruncOpacity = 0
 		
 	// Smoke 
-	if (isVisibleHero || isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
+	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
 		SmokeOpacity = 1
 	else
 		SmokeOpacity = 0
@@ -126,7 +128,7 @@ function MainCanvas({
 				<LogSpinner></LogSpinner>
 			</div>
 			{
-				!(isVisibleHero || isVisibleClimate3) &&
+				!(isVisibleClimate3 || (isVisibleHero && !hasExperienceBegan)) &&
 				<div className="
 						absolute
 						w-full flex items-center justify-center

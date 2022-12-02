@@ -1,4 +1,4 @@
-import MainCanvas from "../../3d/MainCanvas";
+
 import SideTrunc from "./SideTruncs.tsx/SideTrunc";
 
 interface Intro1Props {

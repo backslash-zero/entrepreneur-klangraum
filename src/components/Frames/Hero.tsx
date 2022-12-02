@@ -7,7 +7,8 @@ interface HeroProps {
 	hasExperienceBegan: boolean
 }
 
-function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
+function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
+	console.log(hasExperienceBegan)
 	return ( 
 		<div className="relative h-full overflow-hidden
 						text-base">
@@ -49,10 +50,6 @@ function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
 					</div>
 				</div>
 			</div>
-			{
-				hasExperienceBegan &&
-				<Scroll />
-			}
 		</div>
 	
 	 );

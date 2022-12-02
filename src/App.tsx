@@ -18,9 +18,7 @@ function App() {
     await Tone.start()
     setIsMuted(false)
     setIsPlaying(true)
-
-    // Scroll to first content
-    console.log('Browser ready to play audio')
+    setHasExperienceBegan(true)
   }
 
   return (

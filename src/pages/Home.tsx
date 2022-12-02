@@ -47,14 +47,10 @@ function Home({
 	
 
 	useEffect(() => {
-		// console.log(isPlaying, hasExperienceBegan)
 		if (isPlaying && !hasExperienceBegan)
 		{
 			if (experienceBegin && experienceBegin.current)
-			{
-				// experienceBegin.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
 				setHasExperienceBegan(true)
-			}
 		}
 
 	}, [isPlaying, hasExperienceBegan, setHasExperienceBegan])
@@ -188,6 +184,7 @@ function Home({
 			}
 			</div>
 			<MainCanvas
+			hasExperienceBegan={hasExperienceBegan}
 			isPlaying={isPlaying}
 			isMute={isMute}
 			climateSlider={climateSlider}
