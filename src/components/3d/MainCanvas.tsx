@@ -5,11 +5,10 @@ import LogSpinner from "../commons/LogSpinner";
 import Scroll from "../commons/Scroll";
 import EntrLog from "./EntrLog";
 import SmokeBackground from '../SmokeBackground'
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 interface MainCanvasProps {
 	hasExperienceBegan: boolean,
-	isPlaying: boolean,
-	isMute: boolean,
 	climateSlider: number,
 	isVisibleHero: boolean,
 	isVisibleIntro1: boolean,
@@ -28,12 +27,11 @@ interface MainCanvasProps {
 	isVisibleClimate1: boolean,
 	isVisibleClimate2: boolean,
 	isVisibleClimate3: boolean,
+	isVisibleFinal: boolean
 } 
 
 function MainCanvas({ 
 	hasExperienceBegan,
-	isPlaying,
-	isMute,
 	climateSlider,
 	isVisibleHero,
 	isVisibleIntro1,
@@ -52,6 +50,7 @@ function MainCanvas({
 	isVisibleClimate1,
 	isVisibleClimate2,
 	isVisibleClimate3,
+	isVisibleFinal
 }: MainCanvasProps) {
 
 	var SpinnerOpacity = 0
@@ -80,11 +79,10 @@ function MainCanvas({
 		TruncOpacity = 0
 		
 	// Smoke 
-	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3)
+	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3 || isVisibleFinal)
 		SmokeOpacity = 1
 	else
 		SmokeOpacity = 0
-	// Spinner
 	
 	return (
 		<div className="fixed bottom-0 right-0
@@ -101,13 +99,6 @@ function MainCanvas({
 				className="transition-opacity z-0"
 				style={{ opacity: TruncOpacity }}>
 				<ambientLight />
-				{
-					isVisibleClimate3 &&
-					<Environment
-						background={false}
-						files="env.hdr"
-					/>
-				}
 				<group
 					dispose={null}
 					scale={
@@ -118,7 +109,6 @@ function MainCanvas({
 					}
 				>
 					{
-						
 						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={false} climateSlider={climateSlider} />
 					}
 				</group>
@@ -128,13 +118,13 @@ function MainCanvas({
 				<LogSpinner></LogSpinner>
 			</div>
 			{
-				!(isVisibleClimate3 || (isVisibleHero && !hasExperienceBegan)) &&
+				!(isVisibleFinal || (isVisibleHero && !hasExperienceBegan)) &&
 				<div className="
 						absolute
 						w-full flex items-center justify-center
 						bottom-8
 					">
-					<Scroll/>
+						<Scroll hero={isVisibleHero} />
 				</div>
 			}
 		</div>

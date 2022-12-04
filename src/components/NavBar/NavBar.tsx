@@ -2,18 +2,20 @@ import { useEffect, useState } from 'react';
 import { FiInfo, FiPauseCircle, FiPlayCircle, FiX } from 'react-icons/fi'
 import { Link, useMatch, useParams, useResolvedPath } from 'react-router-dom';
 import ScrollToTop from '../utils/ScrollToTop';
+import RTLogo from '../../assets/svg/RTLogo'
 
 interface NavBarProps {
 	isMuted : boolean,
 	setIsMuted: (status: boolean) => void,
-	isPlaying: boolean
+	isPlaying: boolean,
+	firstPage: boolean
 }
 
-function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
+function NavBar({ isMuted, setIsMuted, isPlaying, firstPage } : NavBarProps) {
 	
 	const resolvedPath = useResolvedPath("/infos")
 	const isInfosActive = useMatch({ path: resolvedPath.pathname, end: true })
-	
+
 	return (
 		
 		<nav className="fixed top-0 w-full h-20 z-20
@@ -24,9 +26,12 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 		border-b border-fluorange-500 border-1
 		backdrop-blur
 		">								
-		<p className='font-display'>
-		
-		</p>
+		<div className='font-display'>
+			{
+				firstPage &&
+				<RTLogo />
+			}
+		</div>
 		<div className='text-[40px] flex items-center gap-2'>
 		{
 			isPlaying &&
@@ -39,19 +44,19 @@ function NavBar({ isMuted, setIsMuted, isPlaying } : NavBarProps) {
 			}
 			</button>
 		}
-		<div>
-		{
-			!isInfosActive
-			?
-			<Link className='w-10 h-10 flex items-center justify-center' to="/infos" >
-			<FiInfo  strokeWidth={1}/>
-			</Link>
-			:
-			<Link className='w-10 h-10 flex items-center justify-center' to="/">
-			<FiX  strokeWidth={1}/>
-			</Link>
-		}
-		</div>
+			<div>
+			{
+				!isInfosActive
+				?
+				<Link className='w-10 h-10 flex items-center justify-center' to="/infos" >
+				<FiInfo  strokeWidth={1}/>
+				</Link>
+				:
+				<Link className='w-10 h-10 flex items-center justify-center' to="/">
+				<FiX  strokeWidth={1}/>
+				</Link>
+			}
+			</div>
 		</div>
 		</nav>
 		);

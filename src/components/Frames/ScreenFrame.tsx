@@ -54,7 +54,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		
 		case "center":
 			style = { 
-				paddingTop: "30%", 
+				paddingTop: "20%", 
 				fontSize: "2rem", 
 				lineHeight: "2.5rem",
 

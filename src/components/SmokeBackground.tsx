@@ -46,8 +46,8 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 		let ammountSmoke = 0.1;
 
 		const options = {
-			minLifetime: 5000 * (ammount + 0.1),
-			maxLifetime: 7000 * (ammount + 0.1),
+			minLifetime: 5000 * (ammount),
+			maxLifetime: 7000 * (ammount),
 		}
 
 		if (party.current)
@@ -64,7 +64,7 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 	}, [ammount])
 
 
-	var opacity = "" + map(ammount,0,1,0.6,1)
+	var opacity = "" + map(ammount,0,1,0.4,1)
 
 	return (
 		<div className="relative h-full w-full opacity-50"

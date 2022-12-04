@@ -89,20 +89,24 @@ function Timeline({
 		isVisibleStages9,
 		isVisibleStages10])
 		
+	const currentYear = new Date().getFullYear() 
 	
 	return ( 
 		checkIsVisible() ?
 			<div className="fixed w-full h-6 top-7 left-5 
 							z-30
-							flex">
-			<div className="w-full h-full rounded-full 
-							flex items-center p-1
-							border border-1 border-fluorange-500">
-					<div className="w-full h-full bg-fluorange-500/25 rounded-full
-									transition-all" style={{ width: ProgressSizeString }}></div>
-			</div>
-			<div className="w-56 h-full">
-
+							text-fluorange-500
+							flex items-center justify-between gap-2">
+				<p>{currentYear}</p>
+				<div className="w-full h-full rounded-sm pt-1 pb-1
+								flex items-center justify-between  
+								border-l-4 border-r-4 border-fluorange-500">
+						<div className="w-full h-full bg-fluorange-500/25
+										transition-all" style={{ width: ProgressSizeString }}>
+						</div>
+				</div>
+				<p>{currentYear + 30}</p>
+				<div className="w-80 h-full">
 			</div>
 		</div>
 		:

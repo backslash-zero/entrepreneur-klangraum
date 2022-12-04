@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import * as Tone from 'tone'
+import MainPageLoader from './components/commons/MainPageLoader';
 import NavBar from './components/NavBar/NavBar';
 import MainSounds from './components/ToneSounds/MainSounds';
 import Home from './pages/Home';
@@ -12,6 +13,10 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [hasExperienceBegan, setHasExperienceBegan] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
+  const [isVisibleHero, setIsVisibleHero] = useState(true)
+  
+  // Loaded finsihed
+  // const [hasLoaded, setLoaded] = useState(false)
 
   const StartTone = async () => {
     // Start sound experience
@@ -22,9 +27,10 @@ function App() {
   }
 
   return (
-    <div className='bg-soil-400'>
+    <React.Suspense fallback={<MainPageLoader/>}>
+    <div className='h-full bg-soil-400'>
       <MainSounds isPlaying={isPlaying} isMuted={isMuted} />
-      <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} />
+      <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} firstPage={isVisibleHero} />
         <Routes>
         <Route
           path='/'
@@ -33,10 +39,15 @@ function App() {
             isPlaying={isPlaying}
             isMute={isMuted}
             hasExperienceBegan={hasExperienceBegan}
-            setHasExperienceBegan={setHasExperienceBegan}/>} />
+            setHasExperienceBegan={setHasExperienceBegan}
+            isVisibleHero={isVisibleHero}
+            setIsVisibleHero={setIsVisibleHero}
+          />}
+        />
           <Route path='/infos' element={<Infos/>}/>
         </Routes>
-    </div>
+      </div>
+    </React.Suspense>
   );
 }
 

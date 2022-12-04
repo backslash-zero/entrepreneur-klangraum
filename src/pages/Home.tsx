@@ -26,13 +26,16 @@ import ScreenFrame from "../components/Frames/ScreenFrame";
 import FrameSounds from "../components/ToneSounds/FrameSounds";
 import Timeline from "../components/NavBar/Timeline";
 import MainCanvas from "../components/3d/MainCanvas";
+import Final from "../components/Frames/Final";
 
 interface HomeProps {
 	isPlaying: boolean,
 	isMute: boolean
 	hasExperienceBegan : boolean,
 	setHasExperienceBegan : Dispatch<SetStateAction<boolean>>,
-	StartTone : () => {}
+	StartTone: () => {},
+	isVisibleHero : boolean,
+	setIsVisibleHero : Dispatch<SetStateAction<boolean>>,
 }
 
 function Home({ 
@@ -40,7 +43,9 @@ function Home({
 	isPlaying, 
 	isMute, 
 	hasExperienceBegan, 
-	setHasExperienceBegan
+	setHasExperienceBegan,
+	isVisibleHero,
+	setIsVisibleHero,
 }: HomeProps) {
 	
 	const experienceBegin = useRef<null | HTMLDivElement>(null)
@@ -55,7 +60,6 @@ function Home({
 
 	}, [isPlaying, hasExperienceBegan, setHasExperienceBegan])
 
-	const [isVisibleHero, setIsVisibleHero] = useState(false)
 
 	const [isVisibleIntro1, setIsVisibleIntro1] = useState(false)
 	const [isVisibleIntro2, setIsVisibleIntro2] = useState(false)
@@ -76,7 +80,9 @@ function Home({
 	const [isVisibleClimate2, setIsVisibleClimate2] = useState(false)
 	const [isVisibleClimate3, setIsVisibleClimate3] = useState(false)
 	
-	const [climateSlider, setClimateSlider] = useState(2)
+	const [isVisibleFinal, setIsVisibleFinal] = useState(false)
+	
+	const [climateSlider, setClimateSlider] = useState(0)
 	
 	return (
 		<>
@@ -117,6 +123,8 @@ function Home({
 							isVisibleClimate1={isVisibleClimate1}
 							isVisibleClimate2={isVisibleClimate2}
 							isVisibleClimate3={isVisibleClimate3}
+							
+							isVisibleFinal={isVisibleFinal}
 
 							climateSlider={climateSlider}
 			
@@ -178,33 +186,36 @@ function Home({
 						<Climate2/>
 					</ScreenFrame>
 					<ScreenFrame setVisible={setIsVisibleClimate3} theme="sun">
-						<Climate3 setClimateSlider={setClimateSlider}/>
+						<Climate3 setClimateSlider={setClimateSlider} climateSlider={climateSlider} />
+					</ScreenFrame>	
+					<ScreenFrame setVisible={setIsVisibleFinal} theme="default">
+						 <Final/>
 					</ScreenFrame>	
 				</div>
 			}
 			</div>
 			<MainCanvas
-			hasExperienceBegan={hasExperienceBegan}
-			isPlaying={isPlaying}
-			isMute={isMute}
-			climateSlider={climateSlider}
-			isVisibleHero={isVisibleHero}
-			isVisibleIntro1={isVisibleIntro1}
-			isVisibleIntro2={isVisibleIntro2}
-			isVisibleIntro3={isVisibleIntro3}
-			isVisibleStages1={isVisibleStages1}
-			isVisibleStages2={isVisibleStages2}
-			isVisibleStages3={isVisibleStages3}
-			isVisibleStages4={isVisibleStages4}
-			isVisibleStages5={isVisibleStages5}
-			isVisibleStages6={isVisibleStages6}
-			isVisibleStages7={isVisibleStages7}
-			isVisibleStages8={isVisibleStages8}
-			isVisibleStages9={isVisibleStages9}
-			isVisibleStages10={isVisibleStages10}
-			isVisibleClimate1={isVisibleClimate1}
-			isVisibleClimate2={isVisibleClimate2}
-			isVisibleClimate3={isVisibleClimate3}/>
+				hasExperienceBegan={hasExperienceBegan}
+				climateSlider={climateSlider}
+				isVisibleHero={isVisibleHero}
+				isVisibleIntro1={isVisibleIntro1}
+				isVisibleIntro2={isVisibleIntro2}
+				isVisibleIntro3={isVisibleIntro3}
+				isVisibleStages1={isVisibleStages1}
+				isVisibleStages2={isVisibleStages2}
+				isVisibleStages3={isVisibleStages3}
+				isVisibleStages4={isVisibleStages4}
+				isVisibleStages5={isVisibleStages5}
+				isVisibleStages6={isVisibleStages6}
+				isVisibleStages7={isVisibleStages7}
+				isVisibleStages8={isVisibleStages8}
+				isVisibleStages9={isVisibleStages9}
+				isVisibleStages10={isVisibleStages10}
+				isVisibleClimate1={isVisibleClimate1}
+				isVisibleClimate2={isVisibleClimate2}
+				isVisibleClimate3={isVisibleClimate3}
+				isVisibleFinal={isVisibleFinal}
+			/>
 		</>	);
 }
 
