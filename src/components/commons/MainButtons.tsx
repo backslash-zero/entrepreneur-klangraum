@@ -5,9 +5,8 @@ interface MainButtonProps {
 function MainButton( { StartTone } : MainButtonProps ) {
 	return (
 		<>
-			<button className="	w-40 h-8
+			<button className="	w-full h-11
 								bg-fluorange-500 text-soil-200
-								shadow-mainButton shadow-fluorange-500
 								rounded-full"
 				onClick={() => { StartTone() }}>Start</button>	
 		</>);

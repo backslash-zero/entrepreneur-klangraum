@@ -1,6 +1,6 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Environment, useGLTF } from '@react-three/drei'
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BoxGeometry, MeshPhysicalMaterial, Plane, PlaneGeometry, TextureLoader } from "three";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
@@ -20,9 +20,10 @@ interface EntrLogInterface {
 	position?: THREE.Vector3
 	isVisibleIntro3?: boolean
 	isVisibleClimate?: boolean
+	climateSlider?: number
 }
 
-function EntrLog({ position, isVisibleIntro3, isVisibleClimate } : EntrLogInterface) {
+function EntrLog({ position, isVisibleIntro3, isVisibleClimate, climateSlider=0 } : EntrLogInterface) {
 	
 	
 	const { nodes, materials } = useGLTF("/entrepreneur_log.glb") as any
@@ -37,17 +38,19 @@ function EntrLog({ position, isVisibleIntro3, isVisibleClimate } : EntrLogInterf
 
 	const ref = useRef<any>()
 
-	const glassMaterial = new MeshPhysicalMaterial(
-	)
+	const glassMaterial = new MeshPhysicalMaterial()
 
-	// sglassMaterial.bumpMap = materials["Scene_-_Root"].bumpMap
-	glassMaterial.transmission = 1
+	glassMaterial.map = materials["Scene_-_Root"].normalmap
+	glassMaterial.normalMap = materials["Scene_-_Root"].normalMap
+	glassMaterial.normalMapType = materials["Scene_-_Root"].normalMapType
+	glassMaterial.normalScale = new THREE.Vector2( 5, 5 )
+	glassMaterial.color = new THREE.Color( 0x000000 )
 	glassMaterial.roughness = 0
 	glassMaterial.thickness = 1
-	glassMaterial.envMapIntensity = 2
-	glassMaterial.ior = 1
-	glassMaterial.clearcoat = 1
-	
+	glassMaterial.envMapIntensity = 1
+	glassMaterial.ior = 0
+	glassMaterial.transmission = climateSlider
+
 
 	useFrame((state, delta) => {
 		if (ref.current && ref.current.rotation)

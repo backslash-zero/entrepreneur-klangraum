@@ -1,13 +1,13 @@
 import { FiHeadphones } from "react-icons/fi";
 import MainButton from "../commons/MainButtons";
 import DecomposingTrees from "../../assets/svg/DecomposingTrees"
-import Scroll from "../commons/Scroll";
+
 interface HeroProps {
 	StartTone: () => {}
 	hasExperienceBegan: boolean
 }
 
-function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
+function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
 	return ( 
 		<div className="relative h-full overflow-hidden
 						text-base">
@@ -16,10 +16,10 @@ function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
 							relative p-4 pl-2
 							w-full
 							h-full
-							flex items-start justify-start gap-4
+							flex flex-col items-start justify-start gap-8
 							">
-					<div className="h-full">
-						<DecomposingTrees></DecomposingTrees>
+					<div className="w-full">
+						<DecomposingTrees/>
 					</div>
 					<div className="flex-1
 									relative
@@ -32,7 +32,7 @@ function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
 								<FiHeadphones />
 							</div>
 							<p>Für ein besonders immersives Erlebnis verwenden Sie bitte Ihre Kopfhörer.</p>
-							<p className="text-sm">Es werden keine Daten gespeichert.</p>
+							<p className="text-xs italic">Es werden keine Daten gespeichert.</p>
 						</div>
 				{
 					!hasExperienceBegan &&
@@ -40,8 +40,8 @@ function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
 									w-full
 									flex
 								">
-						<div className="w-full flex flex-col gap-4">
-							<p>Ein virtuller Klangraum des Residenytheaters.</p>
+						<div className="w-full flex flex-col items-center gap-4">
+							<p className="text-center">Ein virtuller Klangraum des Residenytheaters.</p>
 									<MainButton StartTone={StartTone} />
 						</div>
 					</div>
@@ -49,10 +49,6 @@ function Hero({ StartTone, hasExperienceBegan } : HeroProps ) {
 					</div>
 				</div>
 			</div>
-			{
-				hasExperienceBegan &&
-				<Scroll />
-			}
 		</div>
 	
 	 );
