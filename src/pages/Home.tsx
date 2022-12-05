@@ -188,7 +188,7 @@ function Home({
 					<ScreenFrame setVisible={setIsVisibleClimate3} theme="sun">
 						<Climate3 setClimateSlider={setClimateSlider} climateSlider={climateSlider} />
 					</ScreenFrame>	
-					<ScreenFrame setVisible={setIsVisibleFinal} theme="default">
+					<ScreenFrame setVisible={setIsVisibleFinal} theme="sun">
 						 <Final/>
 					</ScreenFrame>	
 				</div>

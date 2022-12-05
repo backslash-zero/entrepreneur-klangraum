@@ -2,7 +2,8 @@ import { FiRotateCw } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import DecomposingTrees from "../../assets/svg/DecomposingTrees";
 
-function  Final() {
+function Final() {
+	const scrollToTop = () => window.scrollTo(0, 0);
 	return (
 		<>
 			<div className="flex flex-col gap-4">
@@ -15,7 +16,8 @@ function  Final() {
 					</a>
 				</div>
 				<div className="flex items-center gap-2 font-semibold
-								">
+								"
+					onClick={scrollToTop}>
 					<p className="border-b-2 flex items-center gap-1">
 						neu anfangen
 					</p>

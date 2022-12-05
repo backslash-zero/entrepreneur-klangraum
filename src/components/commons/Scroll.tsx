@@ -10,10 +10,17 @@ function Scroll({ hero=false } : ScrollProps) {
 	if (!hero)
 		style = {opacity: "0.5"}
 	return (
-		<div className="relative w-full flex items-center justify-center z-20
-						animate-pulse animate-bounce text-5xl text-fluorange-500"
+		<div className="relative w-full items-center justify-center z-20
+						flex flex-col gap-2
+						text-5xl text-fluorange-500"
 			style={style}>
-			<FiChevronsDown strokeWidth={1}/>
+			{
+				hero &&
+				<p className="text-xs">bitte nach unten scrollen</p>
+			}
+			<FiChevronsDown
+				className="animate-pulse animate-bounce"
+				strokeWidth={1} />
 		</div>);
 }
 

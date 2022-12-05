@@ -18,7 +18,10 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 		{
 			// 15,38,30		Forest green
 			// 253, 95, 0	Fluo orange
-			party.current = SmokeMachine(ctx, [15,38,30])
+			// 6, 24, 18	Very dark forest
+			// 233, 226, 221 Dark soil
+			// 232, 215, 204 Very Dark soil
+			party.current = SmokeMachine(ctx, [253, 95, 0])
 			party.current.step(1000)
 			party.current.start()
 		}
@@ -42,29 +45,28 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 
 	useEffect(() => {
 
-		const ammountGenerators = 2;
 		let ammountSmoke = 0.1;
 
 		const options = {
-			minLifetime: 5000 * (ammount),
-			maxLifetime: 7000 * (ammount),
+			minLifetime: 3000 * (ammount),
+			maxLifetime: 5 * (ammount),
 		}
 
-		if (party.current)
-		{
+		if (party.current) {
 			party.current.setPreDrawCallback(() => {
-				for(var i = 0; i <= ammountGenerators; i++){
-					party.current.addSmoke((window.innerWidth / ammountGenerators) * i, // x
+				party.current.addSmoke((window.innerWidth / 2), // x
 					window.innerHeight * 1.2, // y
 					ammountSmoke, // ammount
 					options); // options
 				}
-			 })
+			)
 		}
+		
+		
 	}, [ammount])
 
 
-	var opacity = "" + map(ammount,0,1,0.4,1)
+	var opacity = "" + map(ammount,0,1,0.2,1)
 
 	return (
 		<div className="relative h-full w-full opacity-50"
