@@ -45,7 +45,7 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 
 	useEffect(() => {
 
-		let ammountSmoke = 0.1 * ammount;
+		let ammountSmoke = 0.1 * (1+ ammount);
 
 		const options = {
 			minLifetime: 3000 * (ammount),
