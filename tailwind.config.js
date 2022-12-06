@@ -31,7 +31,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'display' : ['NaNSuccessTitling'],
+        'display' : ['Apercu'],
         'sans' : ['SuisseIntl', 'serif']
       },
       boxShadow: {

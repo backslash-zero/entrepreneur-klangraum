@@ -8,7 +8,7 @@ interface PersonProps {
 function Person({ position, name, link } : PersonProps) {
 	return ( 
 		<div>
-			<h3 className="text-lg font-semibold">{position}</h3>
+			<h3 className="font-display text-xl ">{position}</h3>
 			{
 				link
 				?

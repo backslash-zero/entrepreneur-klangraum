@@ -10,7 +10,8 @@ interface HeroProps {
 function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
 	return ( 
 		<div className="relative h-full overflow-hidden
-						text-base">
+						text-base
+						font-sans text-fluorange-500 ">
 			<div className="relative h-full overflow-hidden">
 				<div className="
 							relative p-4 pl-2
@@ -21,12 +22,13 @@ function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
 					<div className="w-full">
 						<DecomposingTrees/>
 					</div>
+					<p>Ein virtueller Klangraum des Residenztheaters.</p>
 					<div className="flex-1
 									relative
 									w-full
 									h-full
 									flex flex-col justify-between
-									font-sans text-fluorange-500 ">
+									">
 						<div className="flex flex-col gap-4">
 							<div className="text-4xl">
 								<FiHeadphones />
@@ -41,7 +43,6 @@ function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
 									flex
 								">
 						<div className="w-full flex flex-col items-center gap-4">
-							<p className="text-center">Ein virtuller Klangraum des Residenytheaters.</p>
 									<MainButton StartTone={StartTone} />
 						</div>
 					</div>

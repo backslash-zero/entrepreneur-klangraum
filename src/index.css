@@ -127,12 +127,7 @@ code {
     font-style: italic;
     src: url(./assets/fonts/Suisse/SuisseIntl-BlackItalic-WebS.woff2) format("woff2");
   }
-  @font-face {
-    font-family: NaNSuccessTitling;
-    font-weight: 400;
-    font-style: normal;
-    src: url(./assets/fonts/NanSuccessTitling/NaNSuccessTitlingTRIAL-Normal.woff2) format("woff2");
-  }
+  @import url('https://fonts.cdnfonts.com/css/apercu');
 }
 
 p {
