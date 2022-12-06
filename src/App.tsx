@@ -46,6 +46,7 @@ function App() {
           />}
         />
           <Route path='/infos' element={<Infos/>}/>
+          <Route path='/test' element={<MainPageLoader/>}/>
           <Route path='*' element={<PageNotFound/>}/>
         </Routes>
       </div>

@@ -45,7 +45,7 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 
 	useEffect(() => {
 
-		let ammountSmoke = 0.1;
+		let ammountSmoke = 0.1 * ammount;
 
 		const options = {
 			minLifetime: 3000 * (ammount),
@@ -66,7 +66,7 @@ const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
 	}, [ammount])
 
 
-	var opacity = "" + map(ammount,0,1,0.2,1)
+	var opacity = "" + map(ammount,0,1,0.4,1)
 
 	return (
 		<div className="relative h-full w-full opacity-50"

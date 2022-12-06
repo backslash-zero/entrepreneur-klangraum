@@ -80,7 +80,7 @@ function SideTrunc({id , imgID, rotation=0} : SideTruncInterface) {
 
 	return ( 
 		<div className="relative w-20 h-20" >
-			<div className="absolute w-full h-full object-contain z-10 pl-10 pr-10 blur-xs"
+			<div className="absolute w-full h-full object-contain z-10 pl-5 pr-5 blur-xs opacity-80"
 					style={{strokeWidth: 10, strokeLinejoin: 'round'}}>
 				{ numberGraffiti }
 			</div>
