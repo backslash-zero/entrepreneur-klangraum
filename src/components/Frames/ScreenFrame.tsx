@@ -62,7 +62,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 			break;
 		
 		default:
-			style = {}
+			style = { display: "flex" }
 			break;
 	}
 
@@ -98,11 +98,12 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 					{ background }
 			<Div100vh ref={ContainerRef} className=" 
 				relative
-				w-full
+				w-full 
+				md:flex md:items-center md:justify-center
 				p-4 pt-24
 				text-xl
 				z-10">
-				<div className="relative w-full h-full " style={style}>
+				<div className="relative w-full h-full md:w-[720px] md:items-center md:justify-center" style={style}>
 					{ children }
 				</div>
 			</Div100vh>

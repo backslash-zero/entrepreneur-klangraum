@@ -16,11 +16,15 @@ function Infos() {
 	return (
 		<>
 			<ScrollToTop/>
-			<div className="w-full bg-forest-700 text-fluorange-500">
-				<div className="w-full p-4 pt-24
+			<div className="w-full md:h-screen
+							md:flex md:items-center md:justify-center
+							bg-forest-700 text-fluorange-500">
+				<div className="w-full md:w-[720px] p-4 pt-24
 								text-white">
 					<div className="flex flex-col gap-2">
-						<DecomposingTrees/>
+						<div className="w-full md:w-80">
+							<DecomposingTrees/>
+						</div>
 						<p>
 							ist eine begleitende Soundinstallation und ein digitales Vermittlungsangebot des Residenztheaters zur Produktion «Der Entrepreneur», einem Theaterstück von Kevin Rittberger, inszeniert von Nora Schlocker im Marstall.
 						</p>
