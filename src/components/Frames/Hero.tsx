@@ -10,14 +10,14 @@ interface HeroProps {
 function Hero({ StartTone, hasExperienceBegan }: HeroProps) {
 	return ( 
 		<div className="relative h-full overflow-hidden
-						text-base
+						
 						font-sans text-fluorange-500
 						">
 			<div className="relative h-full 
 							md:flex md:items-center md:justify-center
 							overflow-hidden">
 				<div className="
-							relative p-4 pl-2
+							relative
 							w-full md:w-[720px] md:h-auto
 							h-full
 							flex flex-col 
