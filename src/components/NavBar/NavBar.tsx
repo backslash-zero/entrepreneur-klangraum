@@ -35,7 +35,7 @@ function NavBar({ isMuted, setIsMuted, isPlaying, firstPage } : NavBarProps) {
 		<div className='text-[40px] flex items-center gap-2'>
 		{
 			isPlaying &&
-			<button className='w-10 h-10 flex items-center justify-center' onClick={() => setIsMuted(!isMuted)}>
+			<button className='w-10 h-10 flex items-center justify-center cursor-pointer' onClick={() => setIsMuted(!isMuted)}>
 			{
 				isMuted ?
 				<FiPlayCircle strokeWidth={1}/>
@@ -48,11 +48,11 @@ function NavBar({ isMuted, setIsMuted, isPlaying, firstPage } : NavBarProps) {
 			{
 				!isInfosActive
 				?
-				<Link className='w-10 h-10 flex items-center justify-center' to="/infos" >
+				<Link className='w-10 h-10 flex items-center justify-center cursor-pointer' to="/infos" >
 				<FiInfo  strokeWidth={1}/>
 				</Link>
 				:
-				<Link className='w-10 h-10 flex items-center justify-center' to="/">
+				<Link className='w-10 h-10 flex items-center justify-center cursor-pointer' to="/">
 				<FiX  strokeWidth={1}/>
 				</Link>
 			}

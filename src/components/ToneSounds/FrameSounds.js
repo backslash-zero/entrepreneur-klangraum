@@ -33,8 +33,8 @@ function FrameSounds({
   isVisibleClimate2,
   isVisibleClimate3,
   isVisibleFinal,
-  climateSlider,
   isPlaying,
+  isMute
 }) {
   const [players, setPlayers] = useState([]);
   const opening = useRef(null);
@@ -50,6 +50,11 @@ function FrameSounds({
   const tree7 = useRef(null);
   const strings = useRef(null);
   const tutti = useRef(null);
+
+
+  useEffect(() => {
+    console.log("isMute: "+ isMute)
+  }, [isMute])
 
   useEffect(() => {
     opening.current = new Tone.Player(Opening).toDestination();
@@ -123,19 +128,19 @@ function FrameSounds({
       play(sound);
     };
 
-	const isIncluded = (sounds, p) => sounds.find((sound) => p === sound.current);
+	  const isIncluded = (sounds, p) => sounds.find((sound) => p === sound.current);
 
     const playMultiple = (sounds) => {
       const soundsToStop = players.filter((p) => !isIncluded(sounds, p))
-	  soundsToStop.forEach((p) => {
-		softStop(p);
+	    soundsToStop.forEach((p) => {
+		  softStop(p);
 	  })
 
       sounds.forEach((sound) => play(sound));
     };
 
     if (!isPlaying) return;
-
+    
     // OPENING
     if (isVisibleHero) {
       playOnly(opening);
@@ -208,9 +213,18 @@ function FrameSounds({
     isVisibleClimate2,
     isVisibleClimate3,
     isVisibleFinal,
-    climateSlider,
     isPlaying,
+    isMute,
+    players
   ]);
+
+
+  useEffect(() => {
+    if (isMute && isPlaying)
+    	Tone.Destination.mute = true;
+		else if (isPlaying)
+		  Tone.Destination.mute = false;
+   },[isMute, isPlaying])
 
   return <></>;
 }
