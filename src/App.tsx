@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import * as Tone from 'tone'
 import MainPageLoader from './components/commons/MainPageLoader';
 import NavBar from './components/NavBar/NavBar';
-import MainSounds from './components/ToneSounds/MainSounds';
 import Home from './pages/Home';
 import Infos from './pages/Infos';
 import PageNotFound from './pages/PageNotFound';
@@ -30,7 +29,6 @@ function App() {
   return (
     <React.Suspense fallback={<MainPageLoader/>}>
     <div className='h-full bg-soil-400'>
-      <MainSounds isPlaying={isPlaying} isMuted={isMuted} />
       <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} firstPage={isVisibleHero} />
         <Routes>
         <Route

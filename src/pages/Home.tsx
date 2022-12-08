@@ -104,6 +104,8 @@ function Home({
 						bg-soil-400 text-fluorange-500 z-10'>
 			<FrameSounds
 							isPlaying={isPlaying}
+							isMute={isMute}
+
 							isVisibleHero={isVisibleHero}
 				
 							isVisibleIntro1={isVisibleIntro1}
@@ -126,8 +128,6 @@ function Home({
 							isVisibleClimate3={isVisibleClimate3}
 							
 							isVisibleFinal={isVisibleFinal}
-
-							climateSlider={climateSlider}
 			
 			/>	
 			<ScreenFrame setVisible={setIsVisibleHero}> 
