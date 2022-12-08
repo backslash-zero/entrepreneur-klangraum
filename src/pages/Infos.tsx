@@ -28,10 +28,10 @@ function Infos() {
 						<p>
 							ist ein virtueller Klangraum des Residenztheaters als Teil der Produktion «Der Entrepreneur», ein Theaterstück von Kevin Rittberger, inszeniert von Nora Schlocker im Marstall.
 						</p>
-						<a className="underline underline-offset-4" href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur">INFO UND TICKETS</a>
 						<p>
-								
+							Premiere am 9. Dezember 2022
 						</p>
+						<a className="underline underline-offset-4" href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur">INFO UND TICKETS</a>
 					</div>
 					<h2 className="text-2xl font-display mt-4 mb-2">48°01'29.9"N 11°32'09.1"E</h2>
 					<p>
