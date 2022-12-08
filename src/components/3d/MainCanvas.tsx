@@ -92,7 +92,7 @@ function MainCanvas({
 			{
 				<div className="absolute w-full h-full transition-opacity duration-1000"
 					style={{ opacity: SmokeOpacity }}>
-					<SmokeBackground ammount={climateSlider}/>
+					<SmokeBackground isVisibleClimate3={isVisibleClimate3} isVisibleFinal={isVisibleFinal} />
 				</div>
 			}
 			<Canvas
@@ -120,7 +120,7 @@ function MainCanvas({
 			{
 				!(isVisibleFinal || (isVisibleHero && !hasExperienceBegan)) &&
 				<div className="
-						absolute
+						absolute z-30
 						w-full flex items-center justify-center
 						bottom-8
 					">

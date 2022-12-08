@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 interface TimelineProps {
+	isVisibleIntro3 : boolean,
 	isVisibleStages1 : boolean,
 	isVisibleStages2 : boolean,
 	isVisibleStages3 : boolean,
@@ -14,6 +15,7 @@ interface TimelineProps {
 }
 
 function Timeline({
+	isVisibleIntro3,
 	isVisibleStages1,
 	isVisibleStages2,
 	isVisibleStages3,
@@ -28,6 +30,7 @@ function Timeline({
 	
 	const checkIsVisible = () : boolean => {
 		if (
+			isVisibleIntro3 ||
 			isVisibleStages1 ||
 			isVisibleStages2 ||
 			isVisibleStages3 ||
@@ -46,7 +49,10 @@ function Timeline({
 	const [ProgressSizeString, setProgressSizeString] = useState("0%")
 
 	useEffect(() => {
-		if (isVisibleStages1) {
+		if (isVisibleIntro3) {
+			setProgressSizeString(0 + "%")
+		}
+		else if (isVisibleStages1) {
 			setProgressSizeString(0 + "%")
 		}
 		else if (isVisibleStages2) {
@@ -78,7 +84,8 @@ function Timeline({
 		}
 
 		
-	}, [isVisibleStages1,
+	}, [isVisibleIntro3,
+		isVisibleStages1,
 		isVisibleStages2,
 		isVisibleStages3,
 		isVisibleStages4,
@@ -98,11 +105,13 @@ function Timeline({
 							text-fluorange-500
 							flex items-center justify-between gap-2">
 				<p>{currentYear}</p>
-				<div className="w-full h-full rounded-sm pt-1 pb-1
-								flex items-center justify-between  
-								border-l-4 border-r-4 border-fluorange-500">
-						<div className="w-full h-full bg-fluorange-500/25
+				<div className="relative w-full h-full rounded-sm
+								flex items-center justify-between  ">
+						<div className="w-full h-full border-r-2 border-r-fluorange-500
 										transition-all" style={{ width: ProgressSizeString }}>
+						</div>
+						<div className="absolute w-full h-4 bg-fluorange-500/25 
+										transition-all">
 						</div>
 				</div>
 				<p>{currentYear + 30}</p>

@@ -4,13 +4,20 @@ import SmokeMachine from '@bijection/smoke'
 
 
 interface CanvasSmokeProps {
-	ammount: number, // slider temperature
+	isVisibleClimate3 : boolean
+	isVisibleFinal : boolean
 }
 
-const CanvasSmoke = ({ ammount } : CanvasSmokeProps) => {
+const CanvasSmoke = ({isVisibleClimate3, isVisibleFinal } : CanvasSmokeProps) => {
 	// Refer to HTML Canvas
 	const canvasRef: MutableRefObject<HTMLCanvasElement> = useRef<any>()
 	const party = useRef<any>()
+	var ammount : number
+
+	if (isVisibleClimate3 || isVisibleFinal)
+		ammount = 0.8
+	else
+		ammount = 0.5
 
 	useEffect(() => {
 		const ctx = canvasRef.current.getContext("2d")

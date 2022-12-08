@@ -11,13 +11,8 @@ function Climate3({ setClimateSlider, climateSlider } : Climate3Props) {
 		setClimateSlider(e.target.value)
 	}
 
-	return ( 
-		<div className="w-full h-full relative
-						flex flex-col md:items-center md:justify-center gap-8">
-			<p>
-				Der Anstieg der globalen Temperaturen kann zu einer Beschleunigung dieser Zersetzung führen. Der gebundene Kohlenstoff wird also schneller an die Atmosphäre wieder abgegeben. Abhängig von Umgebungstemperatur und Feuchtigkeit kann Totholz also eine nicht zu vernachlässigende Rolle im Kohlenstoffzyklus und der globalen Erwärmung der kommenden Jahrzehnte spielen.
-			</p>
-			<div className="w-full flex flex-col items-center md:justify-center gap-2 pl-6 pr-6">
+	const slider =
+	<div className="w-full flex flex-col items-center md:justify-center gap-2 pl-6 pr-6">
 				<div className="	w-full 
 									flex items-center justify-between
 									font-mono text-xs text-fluorange-500">
@@ -50,7 +45,14 @@ function Climate3({ setClimateSlider, climateSlider } : Climate3Props) {
 						value={climateSlider}
 						onChange={handleChangeSlider}>
 				</input>
-			</div>
+	</div>
+
+	return ( 
+		<div className="w-full h-full relative
+						flex flex-col md:items-center md:justify-center gap-8">
+			<p>
+				Der Anstieg der globalen Temperaturen kann zu einer Beschleunigung dieser Zersetzung führen. Der gebundene Kohlenstoff wird also schneller an die Atmosphäre wieder abgegeben. Abhängig von Umgebungstemperatur und Feuchtigkeit kann Totholz also eine nicht zu vernachlässigende Rolle im Kohlenstoffzyklus und der globalen Erwärmung der kommenden Jahrzehnte spielen.
+			</p>
 		</div>
 	 );
 }

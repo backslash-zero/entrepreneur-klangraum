@@ -16,26 +16,26 @@ function Infos() {
 	return (
 		<>
 			<ScrollToTop/>
-			<div className="w-full md:h-screen
+			<div className="w-full md:h-screen md:overflow-y-scroll
 							md:flex md:items-center md:justify-center
 							bg-forest-700 text-fluorange-500">
-				<div className="w-full md:w-[720px] p-4 pt-24
+				<div className="w-full md:w-[720px] p-4 pt-24 md:pt-40
 								text-white">
 					<div className="flex flex-col gap-2">
 						<div className="w-full md:w-80">
 							<DecomposingTrees/>
 						</div>
 						<p>
-							ist eine begleitende Soundinstallation und ein digitales Vermittlungsangebot des Residenztheaters zur Produktion «Der Entrepreneur», einem Theaterstück von Kevin Rittberger, inszeniert von Nora Schlocker im Marstall.
+							ist ein virtueller Klangraum des Residenztheaters als Teil der Produktion «Der Entrepreneur», ein Theaterstück von Kevin Rittberger, inszeniert von Nora Schlocker im Marstall.
 						</p>
-						<a className="underline underline-offset-4" href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur">info und tickets</a>
+						<a className="underline underline-offset-4" href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur">INFO UND TICKETS</a>
 						<p>
 								
 						</p>
 					</div>
-					<h2 className="text-2xl font-display mt-4 mb-2">48°01'32.2"N 11°32'10.4"E</h2>
+					<h2 className="text-2xl font-display mt-4 mb-2">48°01'29.9"N 11°32'09.1"E</h2>
 					<p>
-						Die Baumstämme, die Sie vor dem Residenztheater sehen können, wurden aus einem bayerischen Wald an genau <a className="underline underline-offset-4"href="https://osm.org/go/0JAacUQ-?m=">diese Stelle</a> gebracht.
+						Die Baumstämme, die Sie vor dem Marstall sehen, stammen aus dem <a className="underline underline-offset-4"href="https://goo.gl/maps/dwLM2KiF6jWZN9u87">Gründwalder Forst</a> und mussten aufgrund von Borkenkäferbefall gefällt werden.
 					</p>
 					<h2 className="text-2xl font-display mt-4 mb-2">Credits</h2>
 					<div className="flex flex-col gap-2">

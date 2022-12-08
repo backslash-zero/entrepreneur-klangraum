@@ -10,7 +10,7 @@ function MainPageLoader() {
 			<div className="w-40 h-40 animate-pulse">
 				<TreeTrunc></TreeTrunc>
 			</div>
-			<p className="text-soil-500 text-xs font-mono">Loading...</p>
+			<p className="text-soil-500 text-xs font-mono">De-Composing Trees wird geladen...</p>
 			<div className="absolute bottom-8">
 				<RTLogo/>
 			</div>
