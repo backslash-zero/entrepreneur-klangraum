@@ -14,7 +14,7 @@ function App() {
   const [hasExperienceBegan, setHasExperienceBegan] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
   const [isVisibleHero, setIsVisibleHero] = useState(true)
-  
+  const [infosCollapsed, SetInfosCollapsed] = useState(false)
   // Loaded finsihed
   // const [hasLoaded, setLoaded] = useState(false)
 
@@ -26,24 +26,32 @@ function App() {
     setHasExperienceBegan(true)
   }
 
+
   return (
     <React.Suspense fallback={<MainPageLoader/>}>
     <div className='h-full bg-soil-400'>
-      <NavBar isMuted={isMuted} setIsMuted={setIsMuted} isPlaying={isPlaying} firstPage={isVisibleHero} />
-        <Routes>
-        <Route
-          path='/'
-          element={<Home
-            StartTone={StartTone}
-            isPlaying={isPlaying}
-            isMute={isMuted}
-            hasExperienceBegan={hasExperienceBegan}
-            setHasExperienceBegan={setHasExperienceBegan}
-            isVisibleHero={isVisibleHero}
-            setIsVisibleHero={setIsVisibleHero}
-          />}
+      <NavBar 
+          isMuted={isMuted} 
+          setIsMuted={setIsMuted} 
+          isPlaying={isPlaying} 
+          firstPage={isVisibleHero} 
+          infosCollapsed={infosCollapsed} 
+          SetInfosCollapsed={SetInfosCollapsed}
         />
-          <Route path='/infos' element={<Infos/>}/>
+        <Routes>
+          <Route
+            path='/'
+            element={<Home
+              StartTone={StartTone}
+              isPlaying={isPlaying}
+              isMute={isMuted}
+              hasExperienceBegan={hasExperienceBegan}
+              setHasExperienceBegan={setHasExperienceBegan}
+              isVisibleHero={isVisibleHero}
+              setIsVisibleHero={setIsVisibleHero}
+              infosCollapsed={infosCollapsed}
+            />}
+          />
           <Route path='*' element={<PageNotFound/>}/>
         </Routes>
       </div>

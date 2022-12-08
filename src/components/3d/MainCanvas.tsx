@@ -87,7 +87,7 @@ function MainCanvas({
 	return (
 		<div className="fixed bottom-0 right-0
 						w-full h-full
-						z-0
+						z-10
 						 transition-all duration-300">
 			{
 				<div className="absolute w-full h-full transition-opacity duration-1000"

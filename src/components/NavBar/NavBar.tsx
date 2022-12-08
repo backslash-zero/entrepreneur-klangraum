@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react';
 import { FiInfo, FiPauseCircle, FiPlayCircle, FiX } from 'react-icons/fi'
-import { Link, useMatch, useParams, useResolvedPath } from 'react-router-dom';
-import ScrollToTop from '../utils/ScrollToTop';
 import RTLogo from '../../assets/svg/RTLogo'
 
 interface NavBarProps {
 	isMuted : boolean,
 	setIsMuted: (status: boolean) => void,
 	isPlaying: boolean,
-	firstPage: boolean
+	firstPage: boolean,
+
+	infosCollapsed: boolean,
+	SetInfosCollapsed: Function
+
 }
 
-function NavBar({ isMuted, setIsMuted, isPlaying, firstPage } : NavBarProps) {
+function NavBar({ isMuted, setIsMuted, isPlaying, firstPage, infosCollapsed, SetInfosCollapsed } : NavBarProps) {
 	
-	const resolvedPath = useResolvedPath("/infos")
-	const isInfosActive = useMatch({ path: resolvedPath.pathname, end: true })
-
 	return (
 		
-		<nav className="fixed top-0 w-full h-20 z-20
+		<nav className="fixed top-0 w-full h-20 z-[80]
 		p-4
 		flex items-center justify-between
 		bg-transparent
@@ -46,15 +44,19 @@ function NavBar({ isMuted, setIsMuted, isPlaying, firstPage } : NavBarProps) {
 		}
 			<div>
 			{
-				!isInfosActive
+				!infosCollapsed
 				?
-				<Link className='w-10 h-10 flex items-center justify-center cursor-pointer' to="/infos" >
-				<FiInfo  strokeWidth={1}/>
-				</Link>
+				<div className='w-10 h-10 flex items-center justify-center cursor-pointer'
+						onClick={() => SetInfosCollapsed(true)}
+				>
+					<FiInfo  strokeWidth={1}/>
+				</div>
 				:
-				<Link className='w-10 h-10 flex items-center justify-center cursor-pointer' to="/">
-				<FiX  strokeWidth={1}/>
-				</Link>
+				<div className='w-10 h-10 flex items-center justify-center cursor-pointer'
+						onClick={() => SetInfosCollapsed(false)}
+				>
+					<FiX  strokeWidth={1}/>
+				</div>
 			}
 			</div>
 		</div>

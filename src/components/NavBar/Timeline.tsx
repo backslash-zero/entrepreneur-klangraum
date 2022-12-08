@@ -101,7 +101,7 @@ function Timeline({
 	return ( 
 		checkIsVisible() ?
 			<div className="fixed h-6 top-7 left-5 right-28
-							z-30
+							z-[90]
 							text-fluorange-500
 							flex items-center justify-between gap-2
 							">

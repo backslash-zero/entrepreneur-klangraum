@@ -28,6 +28,23 @@ import Timeline from "../components/NavBar/Timeline";
 import MainCanvas from "../components/3d/MainCanvas";
 import Final from "../components/Frames/Final";
 
+import * as Tone from "tone";
+import Opening from "../../assets/samples/opening.mp3";
+import Forest from "../../assets/samples/forest.mp3";
+import Sun from "../../assets/samples/sun.mp3";
+import EndMusic from "../../assets/samples/endmusic.mp3";
+import Tree1 from "../../assets/samples/tree1.mp3";
+import Tree2 from "../../assets/samples/tree2.mp3";
+import Tree3 from "../../assets/samples/tree3.mp3";
+import Tree4 from "../../assets/samples/tree4.mp3";
+import Tree5 from "../../assets/samples/tree5.mp3";
+import Tree6 from "../../assets/samples/tree6.mp3";
+import Tree7 from "../../assets/samples/tree7.mp3";
+import Strings from "../../assets/samples/strings.mp3";
+import Tutti from "../../assets/samples/tutti.mp3";
+
+import Infos from "./Infos";
+
 interface HomeProps {
 	isPlaying: boolean,
 	isMute: boolean
@@ -35,7 +52,8 @@ interface HomeProps {
 	setHasExperienceBegan : Dispatch<SetStateAction<boolean>>,
 	StartTone: () => {},
 	isVisibleHero : boolean,
-	setIsVisibleHero : Dispatch<SetStateAction<boolean>>,
+	setIsVisibleHero: Dispatch<SetStateAction<boolean>>,
+	infosCollapsed: boolean
 }
 
 function Home({ 
@@ -46,6 +64,7 @@ function Home({
 	setHasExperienceBegan,
 	isVisibleHero,
 	setIsVisibleHero,
+	infosCollapsed
 }: HomeProps) {
 	
 	const experienceBegin = useRef<null | HTMLDivElement>(null)
@@ -99,9 +118,12 @@ function Home({
 			isVisibleStages9={isVisibleStages9}
 			isVisibleStages10={isVisibleStages10}
 		/>
-	
-		<div className='w-screen h-full
-						bg-soil-400 text-fluorange-500 z-10'>
+		<div className='relative w-screen h-full
+						bg-soil-400 text-fluorange-500'>
+			{
+					infosCollapsed &&
+					<Infos/>
+			}
 			<FrameSounds
 							isPlaying={isPlaying}
 							isMute={isMute}
@@ -129,7 +151,8 @@ function Home({
 							
 							isVisibleFinal={isVisibleFinal}
 			
-			/>	
+			/>
+					
 			<ScreenFrame setVisible={setIsVisibleHero}> 
 					<Hero StartTone={StartTone} hasExperienceBegan={hasExperienceBegan} />
 			</ScreenFrame>
@@ -217,8 +240,8 @@ function Home({
 				isVisibleClimate2={isVisibleClimate2}
 				isVisibleClimate3={isVisibleClimate3}
 				isVisibleFinal={isVisibleFinal}
-			/>
-		</>	);
+				/>
+			</>	);
 }
 
 export default Home;

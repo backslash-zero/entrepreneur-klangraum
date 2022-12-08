@@ -94,7 +94,8 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		<div className="
 				relative
 				w-full snap-start
-				overflow-hidden">
+				overflow-hidden
+				">
 					{ background }
 			<Div100vh ref={ContainerRef} className=" 
 				relative
@@ -102,7 +103,8 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 				md:flex md:items-center md:justify-center
 				p-4 pt-24
 				text-xl
-				z-10">
+				z-20
+				">
 				<div className="relative w-full h-full md:w-[720px] md:items-center md:justify-center" style={style}>
 					{ children }
 				</div>

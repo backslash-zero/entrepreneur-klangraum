@@ -5,6 +5,7 @@ import DecomposingTrees from "../assets/svg/DecomposingTrees";
 import Person from "../components/Infos/Person";
 import ScrollToTop from "../components/utils/ScrollToTop";
 
+
 function Infos() {
 	useEffect(()  => {
 	    document.body.classList.add('bg-forest');
@@ -14,9 +15,8 @@ function Infos() {
 	    };
 	});
 	return (
-		<>
-			<ScrollToTop/>
-			<div className="w-full md:h-screen md:overflow-y-scroll
+		<div className="fixed w-screen h-screen z-40 bg-forest-700 overflow-y-scroll">
+			<div className="w-full md:h-screen 
 							md:flex md:items-center md:justify-center
 							bg-forest-700 text-fluorange-500">
 				<div className="w-full md:w-[720px] p-4 pt-24 md:pt-40
@@ -54,7 +54,7 @@ function Infos() {
 					</a>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 
