@@ -100,10 +100,11 @@ function Timeline({
 	
 	return ( 
 		checkIsVisible() ?
-			<div className="fixed w-full h-6 top-7 left-5 
+			<div className="fixed h-6 top-7 left-5 right-28
 							z-30
 							text-fluorange-500
-							flex items-center justify-between gap-2">
+							flex items-center justify-between gap-2
+							">
 				<p>{currentYear}</p>
 				<div className="relative w-full h-full rounded-sm
 								flex items-center justify-between  ">
@@ -115,9 +116,7 @@ function Timeline({
 						</div>
 				</div>
 				<p>{currentYear + 30}</p>
-				<div className="w-80 h-full">
 			</div>
-		</div>
 		:
 		<></>
 	 );
