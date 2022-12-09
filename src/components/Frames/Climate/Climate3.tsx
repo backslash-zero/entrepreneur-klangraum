@@ -51,7 +51,7 @@ function Climate3() {
 		<div className="w-full h-full relative
 						flex flex-col md:items-center md:justify-center gap-8">
 			<p>
-				Der Anstieg der globalen Temperaturen kann zu einer Beschleunigung dieser Zersetzung führen. Der gebundene Kohlenstoff wird also schneller an die Atmosphäre wieder abgegeben. Abhängig von Umgebungstemperatur und Feuchtigkeit kann Totholz also eine nicht zu vernachlässigende Rolle im Kohlenstoffzyklus und der globalen Erwärmung der kommenden Jahrzehnte spielen.
+				Während Pilze – wie beschrieben – bei der Zersetzung von Totholz eine zentrale Rolle spielen, zeigen sie sich in einem besonderen Element des Bühnenbilds von ihrer konstruktiven Seite. Der größte Baumstamm auf der Bühne ist aus Pilz-Myzel gewachsen. Mehr über diesen neuartigen, natürlichen und kompostierbaren Werkstoff erfahren Sie vor und nach den Vorstellungen von «Der Entrepreneur» im Foyer des Marstalls. Dort finden sie eine informative Ausstellung unserer Kooperationspartner*innen des Instituts für Naturstofftechnik der Technischen Universität Dresden.
 			</p>
 		</div>
 	 );
