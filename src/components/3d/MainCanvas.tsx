@@ -23,8 +23,11 @@ interface MainCanvasProps {
 	isVisibleClimate1: boolean,
 	isVisibleClimate2: boolean,
 	isVisibleClimate3: boolean,
-	isVisibleClimate4: boolean,
-	isVisibleClimate5: boolean,
+	isVisibleStuck1: boolean,
+	isVisibleStuck2: boolean,
+	isVisibleStuck3: boolean,
+	isVisibleStuck4: boolean,
+	isVisibleQuote: boolean,
 	isVisibleFinal: boolean
 } 
 
@@ -47,8 +50,11 @@ function MainCanvas({
 	isVisibleClimate1,
 	isVisibleClimate2,
 	isVisibleClimate3,
-	isVisibleClimate4,
-	isVisibleClimate5,
+	isVisibleStuck1,
+	isVisibleStuck2,
+	isVisibleStuck3,
+	isVisibleStuck4,
+	isVisibleQuote,
 	isVisibleFinal
 }: MainCanvasProps) {
 
@@ -78,7 +84,15 @@ function MainCanvas({
 		TruncOpacity = 0
 		
 	// Smoke 
-	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3 || isVisibleClimate4 || isVisibleClimate5 || isVisibleFinal)
+	if (isVisibleClimate1 || 
+		isVisibleClimate2 || 
+		isVisibleClimate3 || 
+		isVisibleStuck1	||
+		isVisibleStuck2	||
+		isVisibleStuck3	||
+		isVisibleStuck4	||
+		isVisibleQuote	||
+		isVisibleFinal)
 		SmokeOpacity = 1
 	else
 		SmokeOpacity = 0
@@ -91,7 +105,21 @@ function MainCanvas({
 			{
 				<div className="absolute w-full h-full transition-opacity duration-1000"
 					style={{ opacity: SmokeOpacity }}>
-					<SmokeBackground moreSmoke={isVisibleClimate3 || isVisibleClimate4 || isVisibleClimate5 || isVisibleFinal ? true : false} />
+					<SmokeBackground moreSmoke={isVisibleClimate3 || 
+												isVisibleStuck1	||
+												isVisibleStuck2	||
+												isVisibleStuck3	||
+												isVisibleStuck4	||
+												isVisibleQuote	||
+									isVisibleFinal ? true : false
+					}
+						stuck={isVisibleStuck1	||
+												isVisibleStuck2	||
+												isVisibleStuck3	||
+												isVisibleStuck4	||
+												isVisibleQuote	||
+									isVisibleFinal ? true : false}
+						/>
 				</div>
 			}
 			<Canvas

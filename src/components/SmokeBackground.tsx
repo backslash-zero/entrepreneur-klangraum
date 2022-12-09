@@ -4,10 +4,11 @@ import SmokeMachine from '@bijection/smoke'
 
 
 interface CanvasSmokeProps {
-	moreSmoke: boolean
+	moreSmoke: boolean,
+	stuck: boolean,
 }
 
-const CanvasSmoke = ({ moreSmoke } : CanvasSmokeProps) => {
+const CanvasSmoke = ({ moreSmoke, stuck } : CanvasSmokeProps) => {
 	// Refer to HTML Canvas
 	const canvasRef: MutableRefObject<HTMLCanvasElement> = useRef<any>()
 	const party = useRef<any>()
@@ -27,7 +28,10 @@ const CanvasSmoke = ({ moreSmoke } : CanvasSmokeProps) => {
 			// 6, 24, 18	Very dark forest
 			// 233, 226, 221 Dark soil
 			// 232, 215, 204 Very Dark soil
-			party.current = SmokeMachine(ctx, [253, 95, 0])
+			if (stuck)
+				party.current = SmokeMachine(ctx, [253, 95, 0])
+			else
+				party.current = SmokeMachine(ctx, [253, 95, 0])
 			party.current.step(1000)
 			party.current.start()
 		}
@@ -45,7 +49,7 @@ const CanvasSmoke = ({ moreSmoke } : CanvasSmokeProps) => {
 				window.removeEventListener("resize", handleResize)
 			}
 		);
-	}, [])
+	}, [stuck])
 	
 	const map = (value:number, x1:number, y1:number, x2:number, y2:number) => (value - x1) * (y2 - x2) / (y1 - x1) + x2;
 

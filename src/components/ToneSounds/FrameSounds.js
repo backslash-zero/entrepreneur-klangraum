@@ -31,8 +31,11 @@ function FrameSounds({
   isVisibleClimate1,
   isVisibleClimate2,
   isVisibleClimate3,
-  isVisibleClimate4,
-  isVisibleClimate5,
+  isVisibleStuck1,
+  isVisibleStuck2,
+  isVisibleStuck3,
+  isVisibleStuck4,
+  isVisibleQuote,
   isVisibleFinal,
   isPlaying,
   isMute,
@@ -184,16 +187,14 @@ function FrameSounds({
       playMultiple([forest, sun]);
     }
     // END
-    if (isVisibleClimate3) {
-      playMultiple([endMusic, forest, sun]);
-    }
-    if (isVisibleClimate4) {
-      playMultiple([endMusic, forest, sun]);
-    }
-    if (isVisibleClimate5) {
-      playMultiple([endMusic, forest, sun]);
-    }
-    if (isVisibleFinal) {
+    if (isVisibleClimate3 ||
+        isVisibleStuck1 ||
+        isVisibleStuck2 ||
+        isVisibleStuck3 ||
+        isVisibleStuck4 ||
+        isVisibleQuote ||
+        isVisibleFinal)
+    {
       playMultiple([endMusic, forest, sun]);
     }
   }, [
@@ -214,8 +215,11 @@ function FrameSounds({
     isVisibleClimate1,
     isVisibleClimate2,
     isVisibleClimate3,
-    isVisibleClimate4,
-    isVisibleClimate5,
+    isVisibleStuck1,
+    isVisibleStuck2,
+    isVisibleStuck3,
+    isVisibleStuck4,
+    isVisibleQuote,
     isVisibleFinal,
     isPlaying,
     isMute,

@@ -31,6 +31,11 @@ import Final from "../components/Frames/Final";
 import Infos from "./Infos";
 import Climate5 from "../components/Frames/Climate/Climate5";
 import Climate4 from "../components/Frames/Climate/Climate4";
+import Stuck1 from "../components/Frames/Stuck/Stuck1";
+import Stuck2 from "../components/Frames/Stuck/Stuck2";
+import Stuck3 from "../components/Frames/Stuck/Stuck3";
+import Stuck4 from "../components/Frames/Stuck/Stuck4";
+import Quote from "../components/Frames/Quote";
 
 interface HomeProps {
 	isPlaying: boolean,
@@ -85,9 +90,15 @@ function Home({
 	const [isVisibleClimate1, setIsVisibleClimate1] = useState(false)
 	const [isVisibleClimate2, setIsVisibleClimate2] = useState(false)
 	const [isVisibleClimate3, setIsVisibleClimate3] = useState(false)
-	const [isVisibleClimate4, setIsVisibleClimate4] = useState(false)
-	const [isVisibleClimate5, setIsVisibleClimate5] = useState(false)
+
+
+	const [isVisibleStuck1, setIsVisibleStuck1] = useState(false)
+	const [isVisibleStuck2, setIsVisibleStuck2] = useState(false)
+	const [isVisibleStuck3, setIsVisibleStuck3] = useState(false)
+	const [isVisibleStuck4, setIsVisibleStuck4] = useState(false)
 	
+	const [isVisibleQuote, setIsVisibleQuote] = useState(false)
+
 	const [isVisibleFinal, setIsVisibleFinal] = useState(false)
 	
 	return (
@@ -135,9 +146,13 @@ function Home({
 							isVisibleClimate1={isVisibleClimate1}
 							isVisibleClimate2={isVisibleClimate2}
 							isVisibleClimate3={isVisibleClimate3}
-							isVisibleClimate4={isVisibleClimate4}
-							isVisibleClimate5={isVisibleClimate5}
 							
+							isVisibleStuck1={isVisibleStuck1}
+							isVisibleStuck2={isVisibleStuck2}
+							isVisibleStuck3={isVisibleStuck3}
+							isVisibleStuck4={isVisibleStuck4}
+							isVisibleQuote={isVisibleQuote}
+					
 							isVisibleFinal={isVisibleFinal}
 			
 			/>
@@ -202,11 +217,21 @@ function Home({
 						<ScreenFrame setVisible={setIsVisibleClimate3} theme="sun">
 							<Climate3 />
 						</ScreenFrame>	
-						<ScreenFrame setVisible={setIsVisibleClimate4} theme="sun">
-							<Climate4/>
+						{/* Stuck */}	
+						<ScreenFrame setVisible={setIsVisibleStuck1} theme="dark">
+							<Stuck1/>
 						</ScreenFrame>
-						<ScreenFrame setVisible={setIsVisibleClimate5} theme="sun">
-							<Climate5/>
+						<ScreenFrame setVisible={setIsVisibleStuck2} theme="dark">
+							<Stuck2/>
+						</ScreenFrame>
+						<ScreenFrame setVisible={setIsVisibleStuck3} theme="dark">
+							<Stuck3/>
+						</ScreenFrame>
+						<ScreenFrame setVisible={setIsVisibleStuck4} theme="dark">
+							<Stuck4/>
+						</ScreenFrame>
+						<ScreenFrame setVisible={setIsVisibleQuote} theme="dark">
+							<Quote />
 						</ScreenFrame>	
 						<ScreenFrame setVisible={setIsVisibleFinal} theme="sun">
 							<Final />
@@ -233,8 +258,11 @@ function Home({
 				isVisibleClimate1={isVisibleClimate1}
 				isVisibleClimate2={isVisibleClimate2}
 				isVisibleClimate3={isVisibleClimate3}
-				isVisibleClimate4={isVisibleClimate4}
-				isVisibleClimate5={isVisibleClimate5}
+				isVisibleStuck1={isVisibleStuck1}
+				isVisibleStuck2={isVisibleStuck2}
+				isVisibleStuck3={isVisibleStuck3}
+				isVisibleStuck4={isVisibleStuck4}
+				isVisibleQuote={isVisibleQuote}
 				isVisibleFinal={isVisibleFinal}
 				/>
 			</>	);
