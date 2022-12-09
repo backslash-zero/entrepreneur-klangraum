@@ -1,7 +1,5 @@
 import { CSSProperties, Dispatch, SetStateAction, useEffect, useRef } from "react";
-import InsectTexture from '../../assets/images/InsectTexture.svg'
 import Div100vh from "react-div-100vh";
-import Scroll from "../commons/Scroll";
 
 interface ScreenFrameProps {
 	setVisible: Dispatch<SetStateAction<boolean>>,
@@ -41,7 +39,6 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		}, []
 	)
 	var style: CSSProperties
-	var TextStyle: CSSProperties
 	
 	switch (layout) {
 		case "top":
@@ -54,7 +51,7 @@ const ScreenFrame = ({ setVisible, children, layout, last=false, theme="default"
 		
 		case "center":
 			style = { 
-				paddingTop: "20%", 
+				paddingTop: "15%", 
 				fontSize: "2rem", 
 				lineHeight: "2.5rem",
 

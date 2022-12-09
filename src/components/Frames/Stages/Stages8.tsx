@@ -1,13 +1,9 @@
-interface Stages8Props {
-
-}
-
 function Stages8() {
 	return ( 
 		<div>
 			<div>
 				<p>
-					Die verstärkte Zersetzung durch bodennahe Fauna folgt.
+					Nach 20 Jahren verlangsamt sich der Dekompositionsprozess.
 				</p>
 			</div>
 		</div>

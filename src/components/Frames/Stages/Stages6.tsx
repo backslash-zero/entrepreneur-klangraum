@@ -1,13 +1,9 @@
-interface Stages6Props {
-
-}
-
 function Stages6() {
 	return ( 
 		<div>
 			<div>
 				<p>
-					Das Holz wird rissig.
+					Nach 10 Jahren ist der Stamm weich.
 				</p>
 			</div>
 		</div>

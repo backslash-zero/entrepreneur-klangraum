@@ -53,31 +53,31 @@ function Timeline({
 			setProgressSizeString(0 + "%")
 		}
 		else if (isVisibleStages1) {
-			setProgressSizeString(0 + "%")
+			setProgressSizeString(7 + "%")
 		}
 		else if (isVisibleStages2) {
-			setProgressSizeString(5 + "%")
+			setProgressSizeString(10 + "%")
 		}
 		else if (isVisibleStages3) {
 			setProgressSizeString(10 + "%")
 		}
 		else if (isVisibleStages4) {
-			setProgressSizeString(10 + "%")
+			setProgressSizeString(13 + "%")
 		}
 		else if (isVisibleStages5) {
-			setProgressSizeString(12 + "%")
-		}
-		else if (isVisibleStages6) {
 			setProgressSizeString(23 + "%")
 		}
-		else if (isVisibleStages7) {
-			setProgressSizeString(34 + "%")
+		else if (isVisibleStages6) {
+			setProgressSizeString(33 + "%")
 		}
-		else if (isVisibleStages8) {
+		else if (isVisibleStages7) {
 			setProgressSizeString(50 + "%")
 		}
+		else if (isVisibleStages8) {
+			setProgressSizeString(67 + "%")
+		}
 		else if (isVisibleStages9) {
-			setProgressSizeString(66 + "%")
+			setProgressSizeString(83 + "%")
 		}
 		else if (isVisibleStages10) {
 			setProgressSizeString(100 + "%")

@@ -21,13 +21,13 @@ function Final() {
 				<p>ist eine begleitende Soundinstallation und ein digitales Vermittlungsangebot des Residenztheaters zur Produktion «Der Entrepreneur», einem Theaterstück von Kevin Rittberger, inszeniert von Nora Schlocker im Marstall.</p>
 				<div className="flex items-center gap-2 cursor-pointer 
 								">
-					<a href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur" className="font-semibold border-b-2 flex items-center gap-1">
+					<a href="https://www.residenztheater.de/stuecke/detail/der-entrepreneur" className="font-display font-semibold border-b-2 flex items-center gap-1">
 						INFO UND TICKETS
 					</a>
 				</div>
 				<div className="flex items-center gap-2 cursor-pointer"
 					onClick={scrollToTop}>
-					<p className="font-semibold border-b-2 flex items-center gap-1">
+					<p className="font-display font-semibold border-b-2 flex items-center gap-1">
 						NEU ANFANGEN
 					</p>
 				</div>

@@ -1,12 +1,8 @@
-interface Intro3Props {
-
-}
-
 function Intro3() {
 	return ( 
 		<>
 				<p>
-					30 Jahre wird es dauern, bis diese Fichtenstämme von Insekten, Pilzen, Asseln, Würmern usw. zu Humus zersetzt sein werden. Sie hören diesen biologischen Prozess – künstlerisch übersetzt.
+					30 Jahre wird es dauern, bis diese Fichtenstämme im Wald von Insekten, Pilzen, Asseln, Würmern und anderen Lebensformen zu Humus zersetzt sein werden. Im virtuellen Klangraum «DE-COMPOSING TREES» hören Sie diese biologischen Prozesse – künstlerisch übersetzt.
 				</p>
 		</>
 	 );

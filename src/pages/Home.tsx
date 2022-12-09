@@ -28,22 +28,9 @@ import Timeline from "../components/NavBar/Timeline";
 import MainCanvas from "../components/3d/MainCanvas";
 import Final from "../components/Frames/Final";
 
-import * as Tone from "tone";
-import Opening from "../../assets/samples/opening.mp3";
-import Forest from "../../assets/samples/forest.mp3";
-import Sun from "../../assets/samples/sun.mp3";
-import EndMusic from "../../assets/samples/endmusic.mp3";
-import Tree1 from "../../assets/samples/tree1.mp3";
-import Tree2 from "../../assets/samples/tree2.mp3";
-import Tree3 from "../../assets/samples/tree3.mp3";
-import Tree4 from "../../assets/samples/tree4.mp3";
-import Tree5 from "../../assets/samples/tree5.mp3";
-import Tree6 from "../../assets/samples/tree6.mp3";
-import Tree7 from "../../assets/samples/tree7.mp3";
-import Strings from "../../assets/samples/strings.mp3";
-import Tutti from "../../assets/samples/tutti.mp3";
-
 import Infos from "./Infos";
+import Climate5 from "../components/Frames/Climate/Climate5";
+import Climate4 from "../components/Frames/Climate/Climate4";
 
 interface HomeProps {
 	isPlaying: boolean,
@@ -98,10 +85,10 @@ function Home({
 	const [isVisibleClimate1, setIsVisibleClimate1] = useState(false)
 	const [isVisibleClimate2, setIsVisibleClimate2] = useState(false)
 	const [isVisibleClimate3, setIsVisibleClimate3] = useState(false)
+	const [isVisibleClimate4, setIsVisibleClimate4] = useState(false)
+	const [isVisibleClimate5, setIsVisibleClimate5] = useState(false)
 	
 	const [isVisibleFinal, setIsVisibleFinal] = useState(false)
-	
-	const [climateSlider, setClimateSlider] = useState(0)
 	
 	return (
 		<>
@@ -148,6 +135,8 @@ function Home({
 							isVisibleClimate1={isVisibleClimate1}
 							isVisibleClimate2={isVisibleClimate2}
 							isVisibleClimate3={isVisibleClimate3}
+							isVisibleClimate4={isVisibleClimate4}
+							isVisibleClimate5={isVisibleClimate5}
 							
 							isVisibleFinal={isVisibleFinal}
 			
@@ -211,7 +200,13 @@ function Home({
 							<Climate2/>
 						</ScreenFrame>
 						<ScreenFrame setVisible={setIsVisibleClimate3} theme="sun">
-							<Climate3 setClimateSlider={setClimateSlider} climateSlider={climateSlider} />
+							<Climate3 />
+						</ScreenFrame>	
+						<ScreenFrame setVisible={setIsVisibleClimate4} theme="sun">
+							<Climate4/>
+						</ScreenFrame>
+						<ScreenFrame setVisible={setIsVisibleClimate5} theme="sun">
+							<Climate5/>
 						</ScreenFrame>	
 						<ScreenFrame setVisible={setIsVisibleFinal} theme="sun">
 							<Final />
@@ -221,7 +216,6 @@ function Home({
 			</div>
 			<MainCanvas
 				hasExperienceBegan={hasExperienceBegan}
-				climateSlider={climateSlider}
 				isVisibleHero={isVisibleHero}
 				isVisibleIntro1={isVisibleIntro1}
 				isVisibleIntro2={isVisibleIntro2}
@@ -239,6 +233,8 @@ function Home({
 				isVisibleClimate1={isVisibleClimate1}
 				isVisibleClimate2={isVisibleClimate2}
 				isVisibleClimate3={isVisibleClimate3}
+				isVisibleClimate4={isVisibleClimate4}
+				isVisibleClimate5={isVisibleClimate5}
 				isVisibleFinal={isVisibleFinal}
 				/>
 			</>	);

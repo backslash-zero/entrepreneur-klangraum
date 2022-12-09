@@ -1,13 +1,9 @@
-interface Stages7Props {
-
-}
-
 function Stages7() {
 	return ( 
 		<div>
 			<div>
 				<p>
-					Nach 10 Jahren ist der Stamm weich
+					Im Boden lebende Tiere tragen vermehrt zur Zersetzung des Holzes bei.
 				</p>
 			</div>
 		</div>

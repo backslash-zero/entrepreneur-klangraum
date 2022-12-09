@@ -1,7 +1,3 @@
-interface Stages10Props {
-
-}
-
 function Stages10() {
 	return ( 
 		<div>

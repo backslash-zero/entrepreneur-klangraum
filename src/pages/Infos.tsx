@@ -1,9 +1,7 @@
 
 import { useEffect } from "react";
-import { FiArrowRight } from "react-icons/fi";
 import DecomposingTrees from "../assets/svg/DecomposingTrees";
 import Person from "../components/Infos/Person";
-import ScrollToTop from "../components/utils/ScrollToTop";
 
 
 function Infos() {

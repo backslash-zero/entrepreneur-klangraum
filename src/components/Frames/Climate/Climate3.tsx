@@ -1,51 +1,51 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+// import { Dispatch, SetStateAction } from "react";
 
-interface Climate3Props {
-	climateSlider: number,
-	setClimateSlider: Dispatch<SetStateAction<number>>
-}
+// interface Climate3Props {
+// 	climateSlider: number,
+// 	setClimateSlider: Dispatch<SetStateAction<number>>
+// }
 
-function Climate3({ setClimateSlider, climateSlider } : Climate3Props) {
+function Climate3() {
 	
-	const handleChangeSlider = (e: React.BaseSyntheticEvent) => {
-		setClimateSlider(e.target.value)
-	}
+	// const handleChangeSlider = (e: React.BaseSyntheticEvent) => {
+	// 	setClimateSlider(e.target.value)
+	// }
 
-	const slider =
-	<div className="w-full flex flex-col items-center md:justify-center gap-2 pl-6 pr-6">
-				<div className="	w-full 
-									flex items-center justify-between
-									font-mono text-xs text-fluorange-500">
-						<p className="">+1.5°</p>
-						<p className="">2.0°</p>
-						<p className="">2.5°</p>
-						<p className="">3.0°</p>
-						<p className="">3.5°</p>
-						<p className="">4.0°</p>
-				</div>
-				<div className="w-full h-4 pl-4 pr-4
-								flex items-center justify-between">
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-							<div className="h-full w-[1px] bg-fluorange-500"></div>
-				</div>
-				{/* <div className="absolute w-full h-[1px] bg-fluorange-500 z-0"></div> */}
-				<input
-					className="	w-full h-6 	z-10
-								flex items-center justify-center
-								border-[1px] border-fluorange-500 rounded-full
-								bg-transparent appearance-none cursor-pointer"
-						type="range" 
-						max="1" 
-						min="0" 
-						step="any"
-						value={climateSlider}
-						onChange={handleChangeSlider}>
-				</input>
-	</div>
+	// const slider =
+	// <div className="w-full flex flex-col items-center md:justify-center gap-2 pl-6 pr-6">
+	// 			<div className="	w-full 
+	// 								flex items-center justify-between
+	// 								font-mono text-xs text-fluorange-500">
+	// 					<p className="">+1.5°</p>
+	// 					<p className="">2.0°</p>
+	// 					<p className="">2.5°</p>
+	// 					<p className="">3.0°</p>
+	// 					<p className="">3.5°</p>
+	// 					<p className="">4.0°</p>
+	// 			</div>
+	// 			<div className="w-full h-4 pl-4 pr-4
+	// 							flex items-center justify-between">
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 						<div className="h-full w-[1px] bg-fluorange-500"></div>
+	// 			</div>
+	// 			{/* <div className="absolute w-full h-[1px] bg-fluorange-500 z-0"></div> */}
+	// 			<input
+	// 				className="	w-full h-6 	z-10
+	// 							flex items-center justify-center
+	// 							border-[1px] border-fluorange-500 rounded-full
+	// 							bg-transparent appearance-none cursor-pointer"
+	// 					type="range" 
+	// 					max="1" 
+	// 					min="0" 
+	// 					step="any"
+	// 					value={climateSlider}
+	// 					onChange={handleChangeSlider}>
+	// 			</input>
+	// </div>
 
 	return ( 
 		<div className="w-full h-full relative

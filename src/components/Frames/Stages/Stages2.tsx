@@ -1,13 +1,10 @@
-interface Stages2Props {
-
-}
 
 function Stages2() {
 	return ( 
 		<div>
 			<div>
 				<p>
-					in den ersten 2 bis 3 Jahren dringen Insekten unter die Rinde, darunter verschiedene Borkenkäfer
+					Spechte machen sich auf der Suche nach Insekten an der Rinde des Baumes zu schaffen.
 				</p>
 			</div>
 		</div>

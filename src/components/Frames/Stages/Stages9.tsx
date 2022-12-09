@@ -1,13 +1,9 @@
-interface Stages9Props {
-
-}
-
 function Stages9() {
 	return ( 
 		<div>
 			<div>
 				<p>
-					Nach 20 Jahren verlangsamt sich der Zersetzungsprozess, der Stamm ist eine fasrige Masse, von Moos überwachsen, kaum mehr als Holzstruktur erkennbar.
+					Der Baumstamm ist nun eine faserige Masse, von Moos überwachsen und kaum mehr als Holzstruktur erkennbar.
 				</p>
 			</div>
 		</div>

@@ -1,15 +1,11 @@
-import { Environment } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
 import LogSpinner from "../commons/LogSpinner";
 import Scroll from "../commons/Scroll";
 import EntrLog from "./EntrLog";
 import SmokeBackground from '../SmokeBackground'
-import { isVisible } from "@testing-library/user-event/dist/utils";
 
 interface MainCanvasProps {
 	hasExperienceBegan: boolean,
-	climateSlider: number,
 	isVisibleHero: boolean,
 	isVisibleIntro1: boolean,
 	isVisibleIntro2: boolean,
@@ -27,12 +23,13 @@ interface MainCanvasProps {
 	isVisibleClimate1: boolean,
 	isVisibleClimate2: boolean,
 	isVisibleClimate3: boolean,
+	isVisibleClimate4: boolean,
+	isVisibleClimate5: boolean,
 	isVisibleFinal: boolean
 } 
 
 function MainCanvas({ 
 	hasExperienceBegan,
-	climateSlider,
 	isVisibleHero,
 	isVisibleIntro1,
 	isVisibleIntro2,
@@ -50,6 +47,8 @@ function MainCanvas({
 	isVisibleClimate1,
 	isVisibleClimate2,
 	isVisibleClimate3,
+	isVisibleClimate4,
+	isVisibleClimate5,
 	isVisibleFinal
 }: MainCanvasProps) {
 
@@ -79,7 +78,7 @@ function MainCanvas({
 		TruncOpacity = 0
 		
 	// Smoke 
-	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3 || isVisibleFinal)
+	if (isVisibleClimate1 || isVisibleClimate2 || isVisibleClimate3 || isVisibleClimate4 || isVisibleClimate5 || isVisibleFinal)
 		SmokeOpacity = 1
 	else
 		SmokeOpacity = 0
@@ -92,7 +91,7 @@ function MainCanvas({
 			{
 				<div className="absolute w-full h-full transition-opacity duration-1000"
 					style={{ opacity: SmokeOpacity }}>
-					<SmokeBackground isVisibleClimate3={isVisibleClimate3} isVisibleFinal={isVisibleFinal} />
+					<SmokeBackground moreSmoke={isVisibleClimate3 || isVisibleClimate4 || isVisibleClimate5 || isVisibleFinal ? true : false} />
 				</div>
 			}
 			<Canvas
@@ -109,7 +108,7 @@ function MainCanvas({
 					}
 				>
 					{
-						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={false} climateSlider={climateSlider} />
+						<EntrLog isVisibleIntro3={isVisibleIntro3} isVisibleClimate={false} />
 					}
 				</group>
 			</Canvas>

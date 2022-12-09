@@ -1,13 +1,9 @@
-interface Climate1Props {
-
-}
-
 function Climate1() {
 	return ( 
 				<p>
-					Wälder leisten einen entscheidenden Beitrag zur Reduktion von atmosphärischem CO2. Durch Photosynthese wird CO2 als Kohlenstoff in der Biomasse gebunden, O2 wird freigesetzt.
+					Wälder leisten einen entscheidenden Beitrag zur Reduktion von atmosphärischem CO₂. Durch Photosynthese wird CO₂ als Kohlenstoff in der Biomasse gebunden, O2 (2 as subscript) wird freigesetzt.
 				</p>
 	 );
-}
-
-export default Climate1;
+} 
+ 
+export default Climate1; 

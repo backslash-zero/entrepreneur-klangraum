@@ -6,7 +6,7 @@ function Intro1() {
 			<div className="relative w-full flex flex-col">
 				<div className="flex-1 relative z-10">
 					<p>
-						Sie sehen zehn Baumstämme. Sie wurden wegen des Befalls durch Borkenkäfer gefällt (forstwirtschaftlich: geschlachtet) und aus dem Bayerischen Forst entfernt. Dadurch soll das weitere Übergreifen der Käfer auf benachbarte Bäume verhindert werden.
+						Sie sehen hier zehn Fichtenstämme. Die Bäume wurden aufgrund des Befalls durch Borkenkäfer gefällt und aus dem Grünwalder Forst entfernt. Dadurch soll das weitere Übergreifen der Käfer auf benachbarte Bäume verhindert werden.
 					</p>
 				</div>
 				<div className="w-full">
