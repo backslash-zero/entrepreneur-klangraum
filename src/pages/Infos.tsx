@@ -41,8 +41,8 @@ function Infos() {
 						<Person position="Musik und Sound"				name="Yoav Pasovsky" />
 						<Person position="Design und Development"		name="Célestin Meunier"	link="https://celest.in/"/>
 						<Person position="Design"						name="Helin Ulas"		link="https://helinulas.info/"/>
-						<Person position="Digitale Dramaturgie"			name="Ilja Mirsky" />
 						<Person position="Installation"					name="Jana Findeklee, Joki Tewes" />
+						<Person position="Digitale Dramaturgie"			name="Ilja Mirsky" />
 						<Person position="Dramaturgie"					name="Ewald Palmetshofer" />
 						<Person position="Wissenschaftliche Beratung"	name="Dr. Sebastian Seibold, Technische Universität München" />
 					</div>	
