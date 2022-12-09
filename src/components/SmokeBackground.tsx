@@ -15,9 +15,9 @@ const CanvasSmoke = ({ moreSmoke, stuck } : CanvasSmokeProps) => {
 	var ammount : number
 
 	if (moreSmoke)
-		ammount = 0.8
+		ammount = 1.2
 	else
-		ammount = 0.5
+		ammount = 0.7
 
 	useEffect(() => {
 		const ctx = canvasRef.current.getContext("2d")

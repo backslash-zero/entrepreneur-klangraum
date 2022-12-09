@@ -29,8 +29,6 @@ import MainCanvas from "../components/3d/MainCanvas";
 import Final from "../components/Frames/Final";
 
 import Infos from "./Infos";
-import Climate5 from "../components/Frames/Climate/Climate5";
-import Climate4 from "../components/Frames/Climate/Climate4";
 import Stuck1 from "../components/Frames/Stuck/Stuck1";
 import Stuck2 from "../components/Frames/Stuck/Stuck2";
 import Stuck3 from "../components/Frames/Stuck/Stuck3";
@@ -158,6 +156,7 @@ function Home({
 			/>
 					
 			<ScreenFrame setVisible={setIsVisibleHero}> 
+					<div id="start"></div>		
 					<Hero StartTone={StartTone} hasExperienceBegan={hasExperienceBegan} />
 			</ScreenFrame>
 			{
@@ -166,7 +165,6 @@ function Home({
 															snap-y snap-mandatory snap-always
 															scroll-smooth ">
 							{/* intro */}
-						<div id="start" ></div>
 						<ScreenFrame setVisible={setIsVisibleIntro1} layout="top" theme="default">
 							<Intro1/>
 						</ScreenFrame>
