@@ -11,7 +11,6 @@ import Tree4 from "../../assets/samples/tree4.mp3";
 import Tree5 from "../../assets/samples/tree5.mp3";
 import Tree6 from "../../assets/samples/tree6.mp3";
 import Tree7 from "../../assets/samples/tree7.mp3";
-import Strings from "../../assets/samples/strings.mp3";
 import Tutti from "../../assets/samples/tutti.mp3";
 
 function FrameSounds({
@@ -36,7 +35,7 @@ function FrameSounds({
   isVisibleClimate5,
   isVisibleFinal,
   isPlaying,
-  isMute
+  isMute,
 }) {
   const [players, setPlayers] = useState([]);
   const opening = useRef(null);
@@ -50,42 +49,38 @@ function FrameSounds({
   const tree5 = useRef(null);
   const tree6 = useRef(null);
   const tree7 = useRef(null);
-  const strings = useRef(null);
   const tutti = useRef(null);
 
-
   useEffect(() => {
-    console.log("isMute: "+ isMute)
-  }, [isMute])
+    console.log("isMute: " + isMute);
+  }, [isMute]);
 
   useEffect(() => {
     opening.current = new Tone.Player(Opening).toDestination();
-	opening.current.loop = true
+    opening.current.loop = true;
     forest.current = new Tone.Player(Forest).toDestination();
     forest.current.volume.value = -20;
-	forest.current.loop = true
+    forest.current.loop = true;
     sun.current = new Tone.Player(Sun).toDestination();
-	sun.current.loop = true
-	forest.current.volume.value = -6;
+    sun.current.loop = true;
+    forest.current.volume.value = -6;
     endMusic.current = new Tone.Player(EndMusic).toDestination();
     tree1.current = new Tone.Player(Tree1).toDestination();
-	tree1.current.loop = true
+    tree1.current.loop = true;
     tree2.current = new Tone.Player(Tree2).toDestination();
-	tree2.current.loop = true
+    tree2.current.loop = true;
     tree3.current = new Tone.Player(Tree3).toDestination();
-	tree3.current.loop = true
+    tree3.current.loop = true;
     tree4.current = new Tone.Player(Tree4).toDestination();
-	tree4.current.loop = true
+    tree4.current.loop = true;
     tree5.current = new Tone.Player(Tree5).toDestination();
-	tree5.current.loop = true
+    tree5.current.loop = true;
     tree6.current = new Tone.Player(Tree6).toDestination();
-	tree6.current.loop = true
+    tree6.current.loop = true;
     tree7.current = new Tone.Player(Tree7).toDestination();
-	tree7.current.loop = true
-    strings.current = new Tone.Player(Strings).toDestination();
-	strings.current.loop = true
+    tree7.current.loop = true;
     tutti.current = new Tone.Player(Tutti).toDestination();
-	tutti.current.loop = true
+    tutti.current.loop = true;
     setPlayers([
       opening.current,
       forest.current,
@@ -98,7 +93,6 @@ function FrameSounds({
       tree5.current,
       tree6.current,
       tree7.current,
-      strings.current,
       tutti.current,
     ]);
   }, []);
@@ -130,19 +124,17 @@ function FrameSounds({
       play(sound);
     };
 
-	  const isIncluded = (sounds, p) => sounds.find((sound) => p === sound.current);
+    const isIncluded = (sounds, p) =>
+      sounds.find((sound) => p === sound.current);
 
     const playMultiple = (sounds) => {
-      const soundsToStop = players.filter((p) => !isIncluded(sounds, p))
-	    soundsToStop.forEach((p) => {
-		  softStop(p);
-	  })
-
+      const soundsToStop = players.filter((p) => !isIncluded(sounds, p));
+      soundsToStop.forEach((p) => softStop(p));
       sounds.forEach((sound) => play(sound));
     };
 
     if (!isPlaying) return;
-    
+
     // OPENING
     if (isVisibleHero) {
       playOnly(opening);
@@ -180,7 +172,7 @@ function FrameSounds({
       playOnly(tutti);
     }
     if (isVisibleStages10) {
-	    playOnly(tutti);
+      playOnly(tutti);
     }
 
     // CLIMATE
@@ -227,16 +219,13 @@ function FrameSounds({
     isVisibleFinal,
     isPlaying,
     isMute,
-    players
+    players,
   ]);
 
-
   useEffect(() => {
-    if (isMute && isPlaying)
-    	Tone.Destination.mute = true;
-		else if (isPlaying)
-		  Tone.Destination.mute = false;
-   },[isMute, isPlaying])
+    if (isMute && isPlaying) Tone.Destination.mute = true;
+    else if (isPlaying) Tone.Destination.mute = false;
+  }, [isMute, isPlaying]);
 
   return <></>;
 }
