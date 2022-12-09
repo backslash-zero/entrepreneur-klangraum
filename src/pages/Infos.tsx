@@ -41,10 +41,10 @@ function Infos() {
 						<Person position="Musik und Sound"				name="Yoav Pasovsky" />
 						<Person position="Design und Development"		name="Célestin Meunier"	link="https://celest.in/"/>
 						<Person position="Design"						name="Helin Ulas"		link="https://helinulas.info/"/>
-						<Person position="Digital Dramaturgie"			name="Ilja Mirsky" />
+						<Person position="Digitale Dramaturgie"			name="Ilja Mirsky" />
 						<Person position="Installation"					name="Jana Findeklee, Joki Tewes" />
 						<Person position="Dramaturgie"					name="Ewald Palmetshofer" />
-						<Person position="Wissenschaftliche Beratung"	name="De. Sebastian Seibold, Technische Universität München" />
+						<Person position="Wissenschaftliche Beratung"	name="Dr. Sebastian Seibold, Technische Universität München" />
 					</div>	
 					<a href="https://www.residenztheater.de/datenschutz"
 						className="flex items-center underline underline-offset-4">
